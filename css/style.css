@@ -91,6 +91,7 @@ html{
     height: 40px;
     border-radius: 50%;
     transition: 0.3s;
+    position: relative;
 }
 .doc_req .doc_req_outline:hover{
     background-color: #ff6;
@@ -108,9 +109,13 @@ html{
 .envelope_img{
     width: 15px;
     height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
 }
 .doc_req .vertical{
-    padding-top: 14px;
+    padding-top: 38px;
     
     color: #000;
     writing-mode: vertical-rl;
@@ -284,4 +289,124 @@ html{
     line-height: 2.2em;
     font-size: 1.4rem;
     letter-spacing: 0.15em;
+}
+
+/* inner_wrap3 */
+.inner_wrap3{
+    padding-top: 240px;
+    background-color: #fff;
+}
+.inner_wrap3 .title{
+    display: flex;
+    margin: 0 auto;
+}
+.inner_wrap3 .logo_img2{
+    width: 260px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}
+.inner_wrap3 h2{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 1.8;
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+}
+.inner_wrap3 h2 span{
+    color: #fff;
+    font-size: 2.7em;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    vertical-align: -3%;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+}
+.cording_later{
+    height: 800px;
+    background-color: #eee;
+
+}
+/* inner_wrap4 */
+.inner_wrap4{
+    padding: 0 20px;
+    background: #fff;
+    font-size: 6.25px;
+}
+.inner_wrap4 h2{
+    padding: 0 20px;
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    font-size: 12em;
+    text-align: center;
+    line-height: 75px;
+    font-family: 'Cabin', sans-serif;
+}
+/* h2の横棒の装飾--------------------------- */
+
+/* ----------------------------------------- */
+.inner_wrap4 .title p{
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    text-align: center;
+}
+
+
+/* contactボタン部分 */
+.contact_btn{
+    cursor: pointer;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+    position: relative;
+}
+.contact_btn:hover{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    transition: 0.3s;
+    background-color: #ff6;
+}
+.contact_btn a{
+    display: flex;
+    align-items: center;
+}
+.contact_btn_outline{
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: 370px;
+    position: relative;
+}
+.contact_btn_outline .envelope_img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+
+}
+.contact_btn_text{
+    display: block;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+.contact_btn_text p{
+    margin-left: 10px;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.9rem;
+    line-height: 2;
+    letter-spacing: 0.18em;
+    color: #000;
+    
+}
+.contact_btn_img{
+    width: 130px;
+    vertical-align: text-bottom;
 }
