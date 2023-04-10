@@ -6,10 +6,18 @@ ul,li{                                               /* ↑smallで検索して�
 }
 /* reset-end------------------------------------ */
 
-
-/* 共通 */
-.yellow_line, .logo, .sns, .doc_req, nav{
+/* 共通設定 */
+html{
+    font-size: 62.5%; /* =htmlの初期設定の文字の大きさの、16px */
+}
+/* index設定 */
+.header{
     z-index: 100;
+    position: relative;
+}
+.main{
+    z-index: 50;
+    position: relative;
 }
 
 /* 左側の黄色い線 */
@@ -21,6 +29,15 @@ ul,li{                                               /* ↑smallで検索して�
     position: fixed;
     top: 0;
     left: 0;
+}
+
+/* 背景画像部分 */
+.window_img{
+    width: 699px;
+    position: fixed;
+    right: 0;
+    top: 140px;
+    z-index: 0;
 }
 
 /* ロゴ部分 */
@@ -41,11 +58,9 @@ ul,li{                                               /* ↑smallで検索して�
     height: 120px;
     width: 80px;
 
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform:translate(0,-50%);
-    
-    position: fixed;
     left: 54px;
 }
 .sns_outline a, .doc_req_outline a{
@@ -76,6 +91,7 @@ ul,li{                                               /* ↑smallで検索して�
     height: 40px;
     border-radius: 50%;
     transition: 0.3s;
+    position: relative;
 }
 .doc_req .doc_req_outline:hover{
     background-color: #ff6;
@@ -93,9 +109,13 @@ ul,li{                                               /* ↑smallで検索して�
 .envelope_img{
     width: 15px;
     height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
 }
 .doc_req .vertical{
-    padding-top: 14px;
+    padding-top: 38px;
     
     color: #000;
     writing-mode: vertical-rl;
@@ -109,15 +129,12 @@ ul,li{                                               /* ↑smallで検索して�
 .header_nav{
     position: fixed;
     right: 36px;
-    
-    position: absolute;
     top: 205px;
     
     display: flex;
     height: 543px;
     justify-content: space-between;
     writing-mode: vertical-rl;
-    
 }
 .header_nav li{
     margin: 5px 0;
@@ -139,10 +156,336 @@ ul,li{                                               /* ↑smallで検索して�
     height: 124px;
     width: 50px;
     line-height: 50px; /* aタグのブロック真ん中に、文字を持ってくる */
-
+    
     color: #000;
-    font-size: 12px;
+    font-size: 1.4rem;                                                     /* ここ */
     font-weight: bolder;
     font-family: 'Cabin', sans-serif;
     letter-spacing: 0.2em;
+}
+
+/* inner_wrap部分 */
+.inner_wrap{
+    max-width: 1380px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 150px;
+}
+/* contents_top部分 */
+.contents_top{
+    height: 939px;
+    position: absolute;
+    font-size: 6.25px;
+}
+.contents_top h1{
+    writing-mode: vertical-rl;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 6.5em;
+    font-weight: 200;
+    letter-spacing: 0.16em;
+    
+    line-height: 77px;
+    display: block;
+    
+    position: relative;
+    top: 50%;
+    transform:translate(0,-50%);
+    left: 125px;
+}
+
+/* スクロールアイコン部分 */
+.scroll{
+    text-align: center;
+    padding-top: 830px;
+    margin-bottom: 70px;
+}
+.scroll p{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.scroll_img{
+    width: 70px;
+    margin-top: 5px;
+}
+
+/* story1部分 */
+.contents_story1{
+    height: 1100px;
+}
+.inner_contents_story1{
+    position: relative;
+    left: 100px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.inner_contents_story1, .inner_contents_story2{
+    writing-mode: vertical-rl;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.2rem;
+    line-height: 2.2em;
+    letter-spacing: 0.15em;
+    
+}
+
+/* story2部分 */
+.contents_story2{
+    height: 1100px;
+}
+.inner_contents_story2{
+    position: relative;
+    left: 100px;
+    top: 423px;
+}
+
+/* inner_wrap2 */
+.inner_wrap2{
+    padding-top: 240px;
+    background-color: #fff;
+    z-index: 50;
+}
+.inner_wrap2 .logo_img2{
+    width: 260px;
+    margin: 20px auto 40px;
+    display: block;
+} 
+.inner_wrap2 h2{
+    text-align: center;
+    font-size: 34px;
+    line-height: 34px;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000; */
+}
+.inner_wrap2 .title{
+    margin-bottom: 50px;
+}
+.inner_wrap2 .room_img{
+    width: 100%;
+}
+.inner_wrap2 .text{
+    /* height: 151px;
+    display: table; */
+    max-width: 1380px;
+    padding: 0 150px;
+    display: flex;
+    justify-content: space-between;
+    margin: 64px auto 96px auto;
+}
+.inner_wrap2 .text p:first-child{
+    width: 38%;
+    padding-right: 10px;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 1.8;
+    letter-spacing: 0.12em;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-feature-settings: "palt";
+}
+.inner_wrap2 .text p:last-child{
+    width: calc(1080px - 38%);
+    line-height: 2.2em;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    /* vertical-align: middle;                             🌟どうしよう効かない真ん中にならない〜〜〜！！
+    display: table-cell; */
+    font-family: 'Noto Sans JP', sans-serif;
+    font-feature-settings: "palt"                    /* 「」や句読点などの、文字の左づめ */
+}
+
+/* inner_wrap3 */
+.inner_wrap3{
+    padding-top: 200px;
+    background-color: #fff;
+}
+.inner_wrap3 .title{
+    display: flex;
+    margin: 0 auto;
+}
+.inner_wrap3 .logo_img2{
+    width: 260px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}
+.inner_wrap3 h2{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 1.8;
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+}
+.inner_wrap3 h2 span{
+    color: #fff;
+    font-size: 2.7em;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    vertical-align: -3%;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+}
+.cording_later{
+    height: 800px;
+    background-color: #eee;
+
+}
+/* inner_wrap4 */
+.inner_wrap4{
+    background: #fff;
+    font-size: 6.25px;
+}
+.inner_wrap4 h2{
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    font-size: 12em;
+    text-align: center;
+    line-height: 75px;
+    font-family: 'Cabin', sans-serif;
+}
+.inner_wrap4 .title p{
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    text-align: center;
+}
+/* タイトル部分の装飾--------------------------- */
+.text-divider{
+    display: flex;
+    align-items: center;
+}
+.text-divider::before,.text-divider::after {
+    content: '';
+    height: 1px;
+    background-color: #333;
+    flex-grow: 1;
+}
+.text-divider::before {
+    margin-right: 20px;
+}
+.text-divider::after {
+    margin-left: 20px;
+}
+/* ----------------------------------------- */
+/* view_more部分 */
+.view_more_btn{
+    text-align: center;
+    
+}
+.view_more_btn p{
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 3px;
+    
+    
+    display: inline-block;
+    line-height: 40px;
+    letter-spacing: 0.1em;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    
+    /* transition: all 0.3s; */
+}
+.view_more_btn span{
+    transition: all 0.3s;
+    display: inline-block;
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+    margin-left: 7px;
+}
+.view_more_btn span:hover{
+    transition: all 0.3s;
+    
+}
+.view_more_btn img{
+    width: 12px;
+    vertical-align: revert;
+}
+
+/* inner_wrap5 */
+.inner_wrap5{
+    padding-top: 240px;
+    font-size: 6.25px;
+    background-color: #fff;
+}
+.inner_wrap5 h2{
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    font-size: 12em;
+    text-align: center;
+    line-height: 75px;
+    font-family: 'Cabin', sans-serif;
+}
+.wrap5_bg{
+    background: #eee;
+    margin-top: -40px;
+    padding: 100px 0;
+    height: 727px;
+}
+
+/* contactボタン部分 */                                                  /* 🌟検証画面でこの部分にカーソル当てると、左側に変な隙間 */
+.contact_btn{
+    cursor: pointer;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+    position: relative;
+}
+.contact_btn:hover{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    transition: 0.3s;
+    background-color: #ff6;
+}
+.contact_btn a{
+    display: flex;
+    align-items: center;
+}
+.contact_btn_outline{
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: 375px;
+    position: relative;
+}
+.contact_btn_outline .envelope_img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    
+}
+.contact_btn_text{
+    align-items: center;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+.contact_btn_text p{
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.9rem;
+    line-height: 2;
+    letter-spacing: 0.18em;
+    color: #000;
+    
+}
+.contact_btn_img{
+    width: 130px;
+    vertical-align: text-bottom;
 }
