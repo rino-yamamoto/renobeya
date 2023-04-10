@@ -269,11 +269,13 @@ html{
     width: 100%;
 }
 .inner_wrap2 .text{
+    /* height: 151px;
+    display: table; */
     max-width: 1380px;
     padding: 0 150px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 64px auto 96px auto;
 }
 .inner_wrap2 .text p:first-child{
     width: 38%;
@@ -283,17 +285,22 @@ html{
     line-height: 1.8;
     letter-spacing: 0.12em;
     font-family: 'Noto Sans JP', sans-serif;
+    font-feature-settings: "palt";
 }
 .inner_wrap2 .text p:last-child{
     width: calc(1080px - 38%);
     line-height: 2.2em;
     font-size: 1.4rem;
     letter-spacing: 0.15em;
+    /* vertical-align: middle;                             🌟どうしよう効かない真ん中にならない〜〜〜！！
+    display: table-cell; */
+    font-family: 'Noto Sans JP', sans-serif;
+    font-feature-settings: "palt"                    /* 「」や句読点などの、文字の左づめ */
 }
 
 /* inner_wrap3 */
 .inner_wrap3{
-    padding-top: 240px;
+    padding-top: 200px;
     background-color: #fff;
 }
 .inner_wrap3 .title{
@@ -328,12 +335,10 @@ html{
 }
 /* inner_wrap4 */
 .inner_wrap4{
-    padding: 0 20px;
     background: #fff;
     font-size: 6.25px;
 }
 .inner_wrap4 h2{
-    padding: 0 20px;
     letter-spacing: 0.2em;
     color: #fff;
     text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
@@ -342,9 +347,6 @@ html{
     line-height: 75px;
     font-family: 'Cabin', sans-serif;
 }
-/* h2の横棒の装飾--------------------------- */
-
-/* ----------------------------------------- */
 .inner_wrap4 .title p{
     font-family: 'Noto Sans JP', sans-serif;
     letter-spacing: 0.2em;
@@ -353,9 +355,89 @@ html{
     line-height: 1.9;
     text-align: center;
 }
+/* タイトル部分の装飾--------------------------- */
+.text-divider{
+    display: flex;
+    align-items: center;
+}
+.text-divider::before,.text-divider::after {
+    content: '';
+    height: 1px;
+    background-color: #333;
+    flex-grow: 1;
+}
+.text-divider::before {
+    margin-right: 20px;
+}
+.text-divider::after {
+    margin-left: 20px;
+}
+/* ----------------------------------------- */
+/* view_more部分 */
+.view_more_btn{
+    text-align: center;
+    
+}
+.view_more_btn p{
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 3px;
+    
+    
+    display: inline-block;
+    line-height: 40px;
+    letter-spacing: 0.1em;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    
+    /* transition: all 0.3s; */
+}
+.view_more_btn span{
+    transition: all 0.3s;
+    display: inline-block;
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+    margin-left: 7px;
+}
+.view_more_btn span:hover{
+    transition: all 0.3s;
+    
+}
+.view_more_btn img{
+    width: 12px;
+    vertical-align: revert;
+}
 
+/* inner_wrap5 */
+.inner_wrap5{
+    padding-top: 240px;
+    font-size: 6.25px;
+    background-color: #fff;
+}
+.inner_wrap5 h2{
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    font-size: 12em;
+    text-align: center;
+    line-height: 75px;
+    font-family: 'Cabin', sans-serif;
+}
+.wrap5_bg{
+    background: #eee;
+    margin-top: -40px;
+    padding: 100px 0;
+    height: 727px;
+}
 
-/* contactボタン部分 */
+/* contactボタン部分 */                                                  /* 🌟検証画面でこの部分にカーソル当てると、左側に変な隙間 */
 .contact_btn{
     cursor: pointer;
     border-top: 1px solid #eee;
@@ -379,7 +461,7 @@ html{
     height: 40px;
     border-radius: 50%;
     position: absolute;
-    left: 370px;
+    left: 375px;
     position: relative;
 }
 .contact_btn_outline .envelope_img{
@@ -387,17 +469,14 @@ html{
     top: 50%;
     left: 50%;
     transform:translate(-50%,-50%);
-
+    
 }
 .contact_btn_text{
-    display: block;
-    display: flex;
     align-items: center;
     padding: 40px 0;
     margin: 0 auto;
 }
 .contact_btn_text p{
-    margin-left: 10px;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.9rem;
