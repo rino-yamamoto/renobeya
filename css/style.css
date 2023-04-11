@@ -437,6 +437,92 @@ html{
     height: 727px;
 }
 
+/* inner_wrap6 */
+.inner_wrap6{
+    padding-top: 240px;
+    font-size: 6.25px;
+    background-color: #fff;
+}
+.inner_wrap6 h2{
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    font-size: 12em;
+    text-align: center;
+    line-height: 75px;
+    font-family: 'Cabin', sans-serif;
+}
+.inner_wrap6 .title p{
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    text-align: center;
+    margin-bottom: 85px;
+}
+.inner_wrap6 .faq{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.faq_inner{
+    margin: 0 60px 20px 0;
+    position: relative;
+}
+.faq_inner:nth-child(2n){
+    margin: 0;
+}
+.faq_inner h3{
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #eee;
+    padding: 26px 20px 26px 70px;
+    display: inline-block;
+    width: 484.5px;
+    height: 122px;
+    
+    font-size: 1.7rem;
+    line-height: 2;
+    letter-spacing: 0.2em;
+    
+    transition: 0.3s;
+}
+.faq_inner .one_line{
+    height: 88px;
+}
+.faq_inner h3::before{
+    content: "Q";
+    position: absolute;
+    font-size: 1.8em;
+    left: 20px;
+    top: 15px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 300;
+}
+.faq_inner h3:hover{
+    background-color: #ff6;
+    transition: 0.3s;
+}
+.faq_inner h3 span{
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    display: block;
+    height: 11px;
+    width: 11px;
+    background:linear-gradient(135deg,transparent 0%,transparent 50%,#ff6 50%,#ff6 100%);   /* 右下の3角形 */
+}
+.faq_inner p{
+    width: 484.5px;
+    padding: 20px;
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+}
+
+
 
 /* contactボタン部分 */                                                  /* 🌟検証画面でこの部分にカーソル当てると、左側に変な隙間 */
 .contact_btn{
