@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
         <title>りの部屋</title>
     </head>
     <body>
@@ -233,58 +234,66 @@
                                 <div class="contact_form_inner">
                                     <p class="form_item">お問い合わせ内容</p>
                                     <div class="form_answer">
-                                        <ul>
-                                            <li>資料請求</li>
-                                            <li>りの部屋について</li>
-                                            <li>来店予約</li>
-                                            <li>その他</li>
+                                        <ul class="check_list">
+                                            <li><label><input type="checkbox" name="check">資料請求</label></li>          <!-- 🌟今回の場合、inputタグを使わない方がいいのか…？ -->
+                                            <li><label><input type="checkbox" name="check">りの部屋について</label></li>
+                                            <li><label><input type="checkbox" name="check">来店予約</label></li>
+                                            <li><label><input type="checkbox" name="check">その他</label></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="contact_form_inner">
                                     <p class="form_item">お名前</p>
                                     <div class="form_answer">
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
+                                        <ul class="text_box">
+                                            <li><input type="text" value="" placeholder="山田"></li>
+                                            <li><input type="text" value="" placeholder="太郎"></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="contact_form_inner">
                                     <p class="form_item">フリガナ</p>
                                     <div class="form_answer">
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
+                                        <ul class="text_box">
+                                            <li><input type="text" value="" placeholder="ヤマダ"></li>
+                                            <li><input type="text" value="" placeholder="タロウ"></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="contact_form_inner">
                                     <p class="form_item">電話番号</p>
-                                    <div class="form_answer"></div>
+                                    <div class="form_answer text_box">
+                                        <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="000-0000-0000">
+                                    </div>
                                 </div>
                                 <div class="contact_form_inner">
                                     <p class="form_item">メールアドレス</p>
-                                    <div class="form_answer"></div>
+                                    <div class="form_answer text_box">
+                                        <input type="email" value="" placeholder="example@renove-realcube.com">
+                                    </div>
                                 </div>
                                 <div class="contact_form_inner">
                                     <p class="form_item">メールアドレス(確認用)</p>
-                                    <div class="form_answer"></div>
+                                    <div class="form_answer writing_box">
+                                        <input type="email" value="" placeholder="example@renove-realcube.com">
+                                    </div>
                                 </div>
                                 <div class="contact_form_inner">
                                     <p class="form_item">住所</p>
                                     <div class="form_answer">
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
+                                        <ul class="writing_box">
+                                            <li><input type="text" name="postal_code" minlength="7" maxlength="8" pattern="\d*" autocomplete="shipping postal-code" placeholder="〒103-0006"></li>
+                                            <li><textarea id="message" name="address" cols="" rows="" placeholder="東京都中央区日本橋富沢町10-13 WORK EDITION NIHONBASHI 5F"></textarea></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="contact_form_inner">
                                     <p class="form_item">備考</p>
-                                    <div class="form_answer"></div>
+                                    <div class="form_answer writing_box">
+                                        <textarea id="message" name="message" cols="" rows="" placeholder="お問い合わせ内容を具体的にご入力ください。"></textarea>
+                                    </div>
                                 </div>
-                                
+
         
                             </div>
                             
