@@ -4,6 +4,18 @@ html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,:after,:before{backgr
 ul,li{                                               /* ↑smallで検索して、40％を入力 */
     list-style: none;
 }
+/* チェックボックスデザイン無効化 */
+input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 /* reset-end------------------------------------ */
 
 /* 共通設定 */
@@ -438,12 +450,17 @@ html{
 }
 
 /* inner_wrap6 */
-.inner_wrap6{
+.inner_wrap6,
+.inner_wrap7,
+.inner_wrap8{
     padding-top: 240px;
     font-size: 6.25px;
     background-color: #fff;
+    position: relative;
 }
-.inner_wrap6 h2{
+.inner_wrap6 h2,
+.inner_wrap7 h2,
+.inner_wrap8 h2{
     letter-spacing: 0.2em;
     color: #fff;
     text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
@@ -452,7 +469,9 @@ html{
     line-height: 75px;
     font-family: 'Cabin', sans-serif;
 }
-.inner_wrap6 .title p{
+.inner_wrap6 .title p,
+.inner_wrap7 .title p,
+.inner_wrap8 .title p{
     font-family: 'Noto Sans JP', sans-serif;
     letter-spacing: 0.2em;
     font-weight: 500;
@@ -469,7 +488,6 @@ html{
 }
 .faq_inner{
     margin: 0 60px 20px 0;
-    position: relative;
 }
 .faq_inner:nth-child(2n){
     margin: 0;
@@ -523,35 +541,13 @@ html{
 }
 
 /* inner_wrap7 */
-.inner_wrap7{
-    padding-top: 240px;
-    font-size: 6.25px;
-    background-color: #fff;
-}
-.inner_wrap7 h2{
-    letter-spacing: 0.2em;
-    color: #fff;
-    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
-    font-size: 12em;
-    text-align: center;
-    line-height: 75px;
-    font-family: 'Cabin', sans-serif;
-}
-.inner_wrap7 .title p{
-    font-family: 'Noto Sans JP', sans-serif;
-    letter-spacing: 0.2em;
-    font-weight: 500;
-    font-size: 2.4rem;
-    line-height: 1.9;
-    text-align: center;
-    margin-bottom: 85px;
-}
 .contact_form{
     max-width: 800px;
     margin: 0 auto;
 }
 .contact_form_inner{
     display: flex;
+    padding-top: 20px;
 
 }
 .form_item,
@@ -568,15 +564,59 @@ html{
 .form_answer ul{
     display: flex;
     position: relative;
-
+    
 }
 .form_answer ul li{
-    padding-left: 20px;
     position: relative;
     line-height: 1;
-
+    
 }
-.check_list li::before{
+/* .check_list li::before */
+/* チェックリスト部分------------------------------------------ */
+input[type="checkbox"]{
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+}
+input[type="checkbox"]::before,
+input[type="checkbox"]::after {
+    content: "";
+    display: block; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+input[type="checkbox"]::before {
+    background-color: #fff;
+    border-radius: 0%;
+    border: 1px solid #000;
+    width: 15px;/*チェックボックスの横幅*/
+    height: 15px;/*チェックボックスの縦幅*/
+    transform: translateY(-50%);
+    top: 50%;
+    left: 5px;
+  }
+ 
+  input[type="checkbox"]::after {
+    border-bottom: 2px solid #000;/*チェックの太さ*/
+    border-left: 2px solid #000;/*チェックの太さ*/
+    opacity: 0;/*チェック前は非表示*/
+    height: 6px;/*チェックの高さ*/
+    width: 11px;/*チェックの横幅*/
+    transform: rotate(-45deg);
+    top: -7px;/*チェック時の位置調整*/
+    left: 10px;/*チェック時の位置調整*/
+  }
+  input[type="checkbox"]:checked::after {
+    opacity: 1;/*チェック後表示*/
+  }
+  /* -------------------------------------------------------- */
+input[type="checkbox"]::before{
+    border: 1px solid #000;
+} 
+input[type="checkbox"]::before{
     content: "";
     border: 1px solid #000;
     display: block;
@@ -586,12 +626,105 @@ html{
     bottom: 0;
     margin: auto;
     width: 15px;
-    height: 15px;
+    height: 15px;  
+} 
+.text_box{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.text_inner{
+    padding: 20px;
+    background-color: #eee;
+    width: 100%;
+}
+.space{
+    width: 100%;
+}
+.space li{
+    /* width: 50%; */
+}
+.space li:first-child{
+    margin-right: 5px;
+}
+.address_box{
+}
+.address_box li {
+    display: block;
+}
+/* polocy部分 */
+.policy{
+    overflow: auto;
+    border:1px solid #eee;
+    color:#000;
+    margin: 0 auto;
+    width: 798px;
+    height: 290px;
+    padding: 40px;
+    margin-top: 60px;
+}
+.policy h3,
+.policy h4{
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 20px 0 8px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+}
+.policy p{
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
 
 }
-.writing_box{
-
+/* policyのスクロールバーの設定 */
+.policy::-webkit-scrollbar {
+    width: 8px;
+  }
+.policy::-webkit-scrollbar-thumb {
+    background-color: #ff6;
 }
+.policy::-webkit-scrollbar-track {
+    background-color: #eee;
+}
+
+/* inner_wrap8部分 */
+.inner_wrap8{
+    padding: 240px 0 150px;
+    margin: 0 auto;
+}
+.inner_wrap8 .content{
+    padding: 0 200px;
+    margin-top: 80px;
+}
+.content ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.content li{
+    width: 237px;
+    height: 225px;
+}
+.content a{
+    color: #000;
+}
+.content a img{
+    border: 1px solid #eee;
+}
+.content a p{
+    margin-top: 20px;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    font-weight: normal;
+    font-family: 'Noto Sans JP', sans-serif;
+} 
+
+
+
 
 /* contactボタン部分 */                                                  /* 🌟検証画面でこの部分にカーソル当てると、左側に変な隙間 */
 .contact_btn{
