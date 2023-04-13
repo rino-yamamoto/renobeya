@@ -561,15 +561,11 @@ html{
 .form_answer{
     width: 70%;
 }
-.form_answer ul{
-    display: flex;
-    position: relative;
-    
+.check_list ul{
+    display: flex;   
 }
 .form_answer ul li{
-    position: relative;
     line-height: 1;
-    
 }
 /* .check_list li::before */
 /* チェックリスト部分------------------------------------------ */
@@ -638,18 +634,13 @@ input[type="checkbox"]::before{
     background-color: #eee;
     width: 100%;
 }
-.space{
-    width: 100%;
-}
 .space li{
-    /* width: 50%; */
+    width: 50%;
 }
 .space li:first-child{
     margin-right: 5px;
 }
 .address_box{
-}
-.address_box li {
     display: block;
 }
 /* polocy部分 */
