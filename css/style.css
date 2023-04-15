@@ -343,7 +343,7 @@ html{
 .cording_later{
     height: 800px;
     background-color: #eee;
-
+    
 }
 /* inner_wrap4 */
 .inner_wrap4{
@@ -504,7 +504,7 @@ html{
     font-size: 1.7rem;
     line-height: 2;
     letter-spacing: 0.2em;
-
+    
     transition: 0.3s;
 }
 .faq_inner .one_line{
@@ -548,12 +548,12 @@ html{
 .contact_form_inner{
     display: flex;
     padding-top: 20px;
-
+    
 }
 .form_item,
 .form_answer ul li{
     width: 30%;
-
+    
     letter-spacing: 0.08em;
     font-size: 1.7rem;
     line-height: 2;
@@ -593,9 +593,9 @@ input[type="checkbox"]::before {
     transform: translateY(-50%);
     top: 50%;
     left: 5px;
-  }
- 
-  input[type="checkbox"]::after {
+}
+
+input[type="checkbox"]::after {
     border-bottom: 2px solid #000;/*チェックの太さ*/
     border-left: 2px solid #000;/*チェックの太さ*/
     opacity: 0;/*チェック前は非表示*/
@@ -604,11 +604,11 @@ input[type="checkbox"]::before {
     transform: rotate(-45deg);
     top: -7px;/*チェック時の位置調整*/
     left: 10px;/*チェック時の位置調整*/
-  }
-  input[type="checkbox"]:checked::after {
+}
+input[type="checkbox"]:checked::after {
     opacity: 1;/*チェック後表示*/
-  }
-  /* -------------------------------------------------------- */
+}
+/* -------------------------------------------------------- */
 input[type="checkbox"]::before{
     border: 1px solid #000;
 } 
@@ -667,12 +667,12 @@ input[type="checkbox"]::before{
     font-size: 1.4rem;
     line-height: 2;
     letter-spacing: 0.15em;
-
+    
 }
 /* policyのスクロールバーの設定 */
 .policy::-webkit-scrollbar {
     width: 8px;
-  }
+}
 .policy::-webkit-scrollbar-thumb {
     background-color: #ff6;
 }
@@ -714,6 +714,107 @@ input[type="checkbox"]::before{
     font-family: 'Noto Sans JP', sans-serif;
 } 
 
+/* footer部分 */
+footer{
+    position: relative;
+    background-color: #eee;
+    padding-top: 120px;
+}
+footer h2{
+    width: 260px;
+    height: 90px;
+    margin: 0 auto 50px;
+    cursor: pointer;
+    
+}
+.info{
+    text-align: center;
+}
+.phone,
+.photoBook{
+    text-align: center;
+    display: inline-block;
+    line-height: 42px;
+}
+.phone a,
+.photoBook a{
+    color: #000;
+    cursor: pointer;
+}
+.phone{
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 0.08em;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    letter-spacing: 0.09em;
+    padding: 0 30px;
+    
+}
+.photoBook{
+    padding: 10px 30px 6px;
+    border: 1px solid transparent; 
+    border-radius: 24px; 
+    transition: 0.3s;
+    
+    font-weight: 500;
+    font-size: 1.7rem;
+    line-height: 2;
+    letter-spacing: 0.2em;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.photoBook:hover{
+    transition: 0.3s;
+    background-color: #ff6;
+    border: 1px solid #000;
+    
+}
+.phone span svg,
+.photoBook span svg{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}
+footer nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin: 0 auto;
+    width: 800px;
+}
+.footer_nav{
+    width: 50%;
+}
+.footer_nav ul{
+    display: flex;
+    justify-content: flex-start;
+}
+.footer_icon{
+    width: 50%;
+}
+footer ul li{
+    padding: 10px 14px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    border-radius: 30px;
+
+}
+footer ul li:hover{
+    transition: all 0.3s;
+    border: 1px solid #000;
+    border-radius: 30px;
+    background-color: #ff6;
+}
+footer ul li a{
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    color: #000;
+    
+    width: 123px;
+    height: 50px;
+    display: inline-block;
+}
 
 
 
