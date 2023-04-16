@@ -547,84 +547,89 @@ html{
 }
 .contact_form_inner{
     display: flex;
+    /* justify-content: flex-start; */
     padding-top: 20px;
     
 }
-.form_item,
-.form_answer ul li{
+.form_item{
     width: 30%;
     
     letter-spacing: 0.08em;
     font-size: 1.7rem;
-    line-height: 2;
+    line-height: 60px;
 }
 .form_answer{
     width: 70%;
 }
-.check_list ul{
-    display: flex;   
+.space{
+    display: flex;
+    justify-content: space-between;
+
 }
-.form_answer ul li{
-    line-height: 1;
+.space .text_inner{
+    background-color: #eee;
+    width: 277.5px;
+    height: 60px;
+    padding: 20px;
 }
-/* .check_list li::before */
-/* チェックリスト部分------------------------------------------ */
-input[type="checkbox"]{
-    cursor: pointer;
-    vertical-align: middle;
-    position: relative;
+.space li:first-child{
+    /* margin-right: 5px; */
 }
-input[type="checkbox"]::before,
-input[type="checkbox"]::after {
-    content: "";
-    display: block; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
+.text_box{
+    background-color: #eee;
+    width: 70%;
+    padding: 20px;
 }
-input[type="checkbox"]::before {
-    background-color: #fff;
-    border-radius: 0%;
-    border: 1px solid #000;
-    width: 15px;/*チェックボックスの横幅*/
-    height: 15px;/*チェックボックスの縦幅*/
-    transform: translateY(-50%);
-    top: 50%;
-    left: 5px;
+.text_area1 li{
+    
+}
+.text_area1 li:first-child{
+    background-color: #eee;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.text_area1 li:last-child textarea{
+    background-color: #eee;
+    width: 100%;
+    padding: 20px;
+    height: 120px;
+}
+.text_area2 textarea{
+    background-color: #eee;
+    padding: 20px;
+    height: 120px;
+    width: 100%;
+    
 }
 
-input[type="checkbox"]::after {
-    border-bottom: 2px solid #000;/*チェックの太さ*/
-    border-left: 2px solid #000;/*チェックの太さ*/
-    opacity: 0;/*チェック前は非表示*/
-    height: 6px;/*チェックの高さ*/
-    width: 11px;/*チェックの横幅*/
-    transform: rotate(-45deg);
-    top: -7px;/*チェック時の位置調整*/
-    left: 10px;/*チェック時の位置調整*/
+/* .form_answer{
+    width: 70%;
 }
-input[type="checkbox"]:checked::after {
-    opacity: 1;/*チェック後表示*/
+.check_list ul{
+    display: flex;  
+    justify-content: space-between; 
 }
+.form_answer .space .text_inner{
+    line-height: 1;
+    width: 50%;
+} */
+/* .check_list li::before */
+/* チェックリスト部分------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* -------------------------------------------------------- */
-input[type="checkbox"]::before{
-    border: 1px solid #000;
-} 
-input[type="checkbox"]::before{
-    content: "";
-    border: 1px solid #000;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    width: 15px;
-    height: 15px;  
-} 
-.text_box{
+/* .text_box{
     width: 70%;
     display: flex;
     justify-content: space-between;
@@ -642,7 +647,7 @@ input[type="checkbox"]::before{
 }
 .address_box{
     display: block;
-}
+} */
 /* polocy部分 */
 .policy{
     overflow: auto;
@@ -715,10 +720,12 @@ input[type="checkbox"]::before{
 } 
 
 /* footer部分 */
+.inner_wrap9{
+    padding-top: 120px;
+}
 footer{
     position: relative;
     background-color: #eee;
-    padding-top: 120px;
 }
 footer h2{
     width: 260px;
@@ -729,6 +736,7 @@ footer h2{
 }
 .info{
     text-align: center;
+    margin-bottom: 100px;
 }
 .phone,
 .photoBook{
@@ -778,14 +786,124 @@ footer h2{
 footer nav{
     display: flex;
     justify-content: space-between;
+    text-align: center;
+    max-width: 878px;
+    padding: 0 40px;
+    margin: 0 auto;
+
+    margin-bottom: 70px;
+}
+.nav_menu{
+    width: 50%;
+    display: flex;
+    text-align: left;
+}
+.nav_menu ul:first-child{
+    margin: 0 20px 4px 0;
+}
+.nav_menu ul:last-child{
+}
+.nav_menu li{
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    margin-bottom: 4px;
+}
+.nav_menu li:hover{
+    transition: all 0.3s;
+    border: 1px solid #000;
+    background-color: #ff6;
+    
+}
+.nav_menu li a{
+    width: 123px;
+    height: 50px;
+    line-height: 30px;
+    padding: 10px 14px;
+    display: block;
+    
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: normal;
+}
+.footer_icon{
+    width: 50%;
+}
+.footer_icon p a{
+    border: 1px solid #000;
+    transition: all 0.3s;
+    
+    width: 400px;
+    height: 88px;
+    padding: 20px;
+    display: block;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Cabin', sans-serif;
+    font-size: 2.4rem;
+    line-height: 48px;
+    
+    transition: all 0.3s;
+    text-align: center;
+    letter-spacing: 0.15em;
+}
+.footer_icon p a:hover{
+    
+    background-color: #ff6;
+    transition: all 0.3s;
+}
+.footer_icon ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px 0;
+}
+.footer_icon ul li{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+.footer_icon ul li:hover{
+    border: 1px solid #000;
+    background-color: #ff6;
+    transition: 0.3s;
+
+}
+.footer_icon ul li a{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.footer_icon svg{
+    width: 20px;
+    height: 20px;
+}
+.copy{
+    text-align: center;
+    border-top: 1px solid #000;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 40px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* footer nav{
+    display: flex;
+    justify-content: space-between;
     padding: 0 40px;
     margin: 0 auto;
     width: 800px;
 }
-.footer_nav{
+.nav_menu{
     width: 50%;
 }
-.footer_nav ul{
+.nav_menu ul{
     display: flex;
     justify-content: flex-start;
 }
@@ -793,33 +911,21 @@ footer nav{
     width: 50%;
 }
 footer ul li{
-    padding: 10px 14px;
-    transition: all 0.3s;
-    border: 1px solid transparent;
-    border-radius: 30px;
-
+    
 }
 footer ul li:hover{
-    transition: all 0.3s;
-    border: 1px solid #000;
-    border-radius: 30px;
-    background-color: #ff6;
 }
 footer ul li a{
-    font-size: 1.4rem;
-    line-height: 2;
-    letter-spacing: 0.15em;
-    color: #000;
     
     width: 123px;
     height: 50px;
     display: inline-block;
-}
+} */
 
 
 
 
-/* contactボタン部分 */                                                  /* 🌟検証画面でこの部分にカーソル当てると、左側に変な隙間 */
+/* contactボタン部分 */
 .contact_btn{
     cursor: pointer;
     border-top: 1px solid #eee;
