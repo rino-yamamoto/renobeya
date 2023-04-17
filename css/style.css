@@ -19,8 +19,9 @@ input[type="checkbox"] {
 /* reset-end------------------------------------ */
 
 /* 共通設定 */
-html{
+html, body{
     font-size: 62.5%; /* =htmlの初期設定の文字の大きさの、16px */
+    letter-spacing: 0.15em;
 }
 /* index設定 */
 .header{
@@ -277,17 +278,37 @@ html{
 .inner_wrap2 .title{
     margin-bottom: 50px;
 }
-.inner_wrap2 .room_img{
+.inner_wrap2 #slideshow{
     width: 100%;
 }
+/* スライドショーの設定----------------------------- */
+#slideshow {
+    position: relative;
+    /* width:  640px; 画像の横幅に合わせて記述
+    height: 270px; 画像の高さに合わせて記述 */
+ }
+ #slideshow img {
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 8;
+    opacity: 0.0;
+ }
+ #slideshow img.active {
+    z-index: 10;
+    opacity: 1.0;
+ }
+ #slideshow img.last-active {
+    z-index: 9;
+ }
+ /* --------------------------------------------- */
 .inner_wrap2 .text{
-    /* height: 151px;
-    display: table; */
     max-width: 1380px;
     padding: 0 150px;
     display: flex;
     justify-content: space-between;
-    margin: 64px auto 96px auto;
+    margin: 695px auto 96px;
+    align-items: center;
 }
 .inner_wrap2 .text p:first-child{
     width: 38%;
@@ -304,8 +325,7 @@ html{
     line-height: 2.2em;
     font-size: 1.4rem;
     letter-spacing: 0.15em;
-    /* vertical-align: middle;                             🌟どうしよう効かない真ん中にならない〜〜〜！！
-    display: table-cell; */
+    
     font-family: 'Noto Sans JP', sans-serif;
     font-feature-settings: "palt"                    /* 「」や句読点などの、文字の左づめ */
 }
@@ -384,6 +404,10 @@ html{
 .text-divider::after {
     margin-left: 20px;
 }
+/* ----------------------------------------- */
+/* 🌟8枚の画像のスライド----------------------- */
+
+
 /* ----------------------------------------- */
 /* view_more部分 */
 .view_more_btn{
@@ -542,13 +566,87 @@ html{
 }
 
 /* inner_wrap7 */
+/* チェックリスト部分------------------------------------------ */
+.check_list{
+    padding-top: 20px;
+
+}
+.check_list ul{
+    display: flex;
+    justify-content: space-between;
+    width: 560px;
+
+}
+.check_list ul label{
+    height: 54px;
+    padding-left: 20px;
+    letter-spacing: 0.08em;
+    font-size: 1.7rem;
+    line-height: 2;
+    letter-spacing: 0.2em;
+}
+input[type="checkbox"]{
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+}
+input[type="checkbox"]::before,
+input[type="checkbox"]::after {
+    content: "";
+    display: block; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+input[type="checkbox"]::before {
+    background-color: #fff;
+    border-radius: 0%;
+    border: 1px solid #000;
+    width: 15px;/*チェックボックスの横幅*/
+    height: 15px;/*チェックボックスの縦幅*/
+    transform: translateY(-50%);
+    top: 50%;
+    left: 5px;
+}
+
+input[type="checkbox"]::after {
+    border-bottom: 2px solid #000;/*チェックの太さ*/
+    border-left: 2px solid #000;/*チェックの太さ*/
+    opacity: 0;/*チェック前は非表示*/
+    height: 6px;/*チェックの高さ*/
+    width: 11px;/*チェックの横幅*/
+    transform: rotate(-45deg);
+    top: -6px;/*チェック時の位置調整*/
+    left: -18px;/*チェック時の位置調整*/
+}
+input[type="checkbox"]:checked::after {
+    opacity: 1;/*チェック後表示*/
+}
+input[type="checkbox"]::before{
+    border: 1px solid #000;
+} 
+input[type="checkbox"]::before{
+    content: "";
+    border: 1px solid #000;
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: -20px;
+    bottom: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;  
+} 
+/* -------------------------------------------------------- */
 .contact_form{
     max-width: 800px;
     margin: 0 auto;
 }
 .contact_form_inner{
     display: flex;
-    /* justify-content: flex-start; */
+    justify-content: flex-start;
     padding-top: 20px;
     
 }
@@ -565,7 +663,10 @@ html{
 .space{
     display: flex;
     justify-content: space-between;
-
+    
+    letter-spacing: 0.08em;
+    font-size: 1.4rem;                                                                
+    line-height: 60px;
 }
 .space .text_inner{
     background-color: #eee;
@@ -573,20 +674,18 @@ html{
     height: 60px;
     padding: 20px;
 }
-.space li:first-child{
-    /* margin-right: 5px; */
-}
 .text_box{
     background-color: #eee;
     width: 70%;
     padding: 20px;
 }
-.text_area1 li{
-    
+.text_box .text_inner{
+    letter-spacing: 0.08em;
+    font-size: 1.4rem;                                                                
 }
 .text_area1 li:first-child{
     background-color: #eee;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 20px;
 }
 .text_area1 li:last-child textarea{
@@ -595,61 +694,29 @@ html{
     padding: 20px;
     height: 120px;
 }
-.text_area2 textarea{
+.text_area1 input,
+.text_area1 textarea{
+    letter-spacing: 0.08em;
+    font-size: 1.4rem;
+}
+
+.text_area2 .remarks{
     background-color: #eee;
     padding: 20px;
     height: 120px;
-    width: 100%;
-    
+    width: 560px;
+    letter-spacing: 0.08em;
+    font-size: 1.4rem;
+}
+.first_form_inner p{
+    height: 54px;
+    line-height: 34px;
+    padding-top: 20px;
+    vertical-align: middle;
+
 }
 
-/* .form_answer{
-    width: 70%;
-}
-.check_list ul{
-    display: flex;  
-    justify-content: space-between; 
-}
-.form_answer .space .text_inner{
-    line-height: 1;
-    width: 50%;
-} */
-/* .check_list li::before */
-/* チェックリスト部分------------------------------------------ */
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -------------------------------------------------------- */
-/* .text_box{
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-}
-.text_inner{
-    padding: 20px;
-    background-color: #eee;
-    width: 100%;
-}
-.space li{
-    width: 50%;
-}
-.space li:first-child{
-    margin-right: 5px;
-}
-.address_box{
-    display: block;
-} */
-/* polocy部分 */
+/* policy部分 */
 .policy{
     overflow: auto;
     border:1px solid #eee;
@@ -977,3 +1044,4 @@ footer ul li a{
     width: 130px;
     vertical-align: text-bottom;
 }
+
