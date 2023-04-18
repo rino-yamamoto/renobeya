@@ -153,18 +153,18 @@
                     <h2 class="text-divider">WORKS</h2>
                     <p>施工事例</p>
                 </div>
-                
+
                 <!-- 🌟8枚の画像のスライド -->
                 <div class="works_slider">                                  
                     <ul class="slider">
-                        <li><a href=""><img src="img/img_01.jpg" alt="">シャビーな部屋<span>千葉県浦安/2LDK + DEN</span></a></li>
-                        <li><a href=""><img src="img/img_02.jpg" alt="">クールにキメたい<span>東京都江東区/3LDK</span></a></li>
-                        <li><a href=""><img src="img/img_03.jpg" alt="">NYベーカリーなキッチンの部屋<span>東京都江東区/3LDK</span></a></li>
-                        <li><a href=""><img src="img/img_04.jpg" alt="">「好き」で溢れた部屋♡に暮らす<span>東京都江東区/3LDK</Span></a></li>
-                        <li><a href=""><img src="img/img_05.jpg" alt="">あえて何もしないを選ぶ<span>東京都江東区/3LDK + DEN</span></a></li>
-                        <li><a href=""><img src="img/img_05.jpg" alt="">家族全員で引きこもる？<span>東京都江東区/3LDK + DEN</span></a></li>
-                        <li><a href=""><img src="img/img_05.jpg" alt="">カリフォルニア ♡ ラヴ<span>東京都江東区/3LDK</span></a></li>
-                        <li><a href=""><img src="img/img_05.jpg" alt="">Don't think. feel!<span>東京都江戸川区/4LDK</span></a></li>
+                        <li><a href=""><img src="img/work-1.jpg" alt="部屋の写真">シャビーな部屋<span>千葉県浦安/2LDK + DEN</span></a></li>
+                        <li><a href=""><img src="img/work-2.jpg" alt="部屋の写真">クールにキメたい<span>東京都江東区/3LDK</span></a></li>
+                        <li><a href=""><img src="img/work-3.jpg" alt="部屋の写真">NYベーカリーなキッチンの部屋<span>東京都江東区/3LDK</span></a></li>
+                        <li><a href=""><img src="img/work-4.jpg" alt="部屋の写真">「好き」で溢れた部屋♡に暮らす<span>東京都江東区/3LDK</Span></a></li>
+                        <li><a href=""><img src="img/work-5.jpg" alt="部屋の写真">あえて何もしないを選ぶ<span>東京都江東区/3LDK + DEN</span></a></li>
+                        <li><a href=""><img src="img/work-6.jpg" alt="部屋の写真">家族全員で引きこもる？<span>東京都江東区/3LDK + DEN</span></a></li>
+                        <li><a href=""><img src="img/work-7.jpg" alt="部屋の写真">カリフォルニア ♡ ラヴ<span>東京都江東区/3LDK</span></a></li>
+                        <li><a href=""><img src="img/work-8.jpg" alt="部屋の写真">Don't think. feel!<span>東京都江戸川区/4LDK</span></a></li>
                     </ul>
                 </div>                            
                 
@@ -490,8 +490,9 @@
     
 
 
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-                <!-- what'sりの部屋のスライドショー -->
+                <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+                <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+                <!-- what'sりの部屋のスライド -->
                 <script type="text/javascript">  
                     function slideSwitch() {
                        var $active = $('#slideshow img.active');
@@ -513,6 +514,11 @@
                     $(function() {
                        setInterval( "slideSwitch()", 4000 );
                     });
-                </script>
+
+                    </script>
+                
+                <!-- worksのスライド -->
+                <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+                <script src="js/6-1-8.js"></script>
             </body>
 </html>

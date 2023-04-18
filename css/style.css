@@ -370,6 +370,9 @@ html, body{
     background: #fff;
     font-size: 6.25px;
 }
+.inner_wrap4 .title{
+    margin-bottom: 80px;
+}
 .inner_wrap4 h2{
     letter-spacing: 0.2em;
     color: #fff;
@@ -406,7 +409,29 @@ html, body{
 }
 /* ----------------------------------------- */
 /* 🌟8枚の画像のスライド----------------------- */
-
+.works_slider{
+    margin-bottom: 60px;
+}
+.works_slider li a{
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #000;
+    font-size: 1.7rem;
+    line-height: 2;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-feature-settings: "palt"
+}
+.works_slider li a img{
+    margin-bottom: 10px;
+}
+.works_slider li a span{
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    font-weight: normal;
+}                                                              🌟続き：ホバーの設定をする。
 
 /* ----------------------------------------- */
 /* view_more部分 */
