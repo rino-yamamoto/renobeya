@@ -408,7 +408,7 @@ html, body{
     margin-left: 20px;
 }
 /* ----------------------------------------- */
-/* 🌟8枚の画像のスライド----------------------- */
+/* 8枚の画像のスライド----------------------- */
 .works_slider{
     margin-bottom: 60px;
 }
@@ -431,9 +431,76 @@ html, body{
     line-height: 2;
     letter-spacing: 0.15em;
     font-weight: normal;
-}                                                              🌟続き：ホバーの設定をする。
+}
+/*　スライダーのためのcss　*/
+.slider li .yellow {
+    max-width:327px;/*スライダー内の画像を横幅100%に*/
+    max-height: 496px;;
+}
+.slider .slick-slide {
+    margin-right: 40px;/*スライド左右の余白調整*/
+}
+/*　画像が黄色くhoverする実装　*/
+.slider li a{
+    position: relative;
+}
+.more_btn {
+    position: absolute;
+    top: 0;
+    right: 2px;
 
+    border-right: 70px solid #ff6;
+    border-bottom: 70px solid transparent; 
+    height: 0;
+    width: 0;
+
+    opacity: 1;
+    transition: 0.3s;
+  }
+  .more_btn p{
+    z-index: 10;
+    position: absolute;
+    transform: rotate(45deg);
+    right: -63px;
+    top: 19px;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    font-family: 'Cabin', sans-serif;
+
+    opacity: 1;
+    transition: 0.3s;
+}
+.more_arrow{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    width: 10px;
+
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.slider li .yellow{
+    background-color: #ff6;
+    opacity: 1;
+    transition: 0.3s;
+}
+.slider li img{
+    transition: 0.3s;
+}
+.slider li:hover img{
+    opacity: 0.3;
+    transition: 0.3s;
+}
+.slider li:hover .more_btn,
+.slider li:hover .more_arrow{
+    opacity: 0;
+    transition: 0.3s;
+} 
 /* ----------------------------------------- */
+
 /* view_more部分 */
 .view_more_btn{
     text-align: center;
@@ -444,7 +511,6 @@ html, body{
     top: 0;
     right: 0;
     z-index: 3px;
-    
     
     display: inline-block;
     line-height: 40px;
@@ -589,6 +655,15 @@ html, body{
     line-height: 2;
     letter-spacing: 0.15em;
 }
+/* アコーディオンの実装 */
+.menu:active,
+.menu.is-active {
+  border: 1px solid #000;
+  background-color: #ff6;
+}
+.contents {
+    display: none;
+  }
 
 /* inner_wrap7 */
 /* チェックリスト部分------------------------------------------ */
