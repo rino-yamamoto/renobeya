@@ -1,4 +1,5 @@
 
+	// 施工事例のスライド実装
 	$('.slider').slick({
 		arrows: false,//左右の矢印はなし
 		autoplay: true,//自動的に動き出すか。初期値はfalse。
@@ -27,3 +28,8 @@
 	// 	}
 	// ]
 	});
+
+	// FAQのアコーディオン実装
+	$(".js-menu").on("click", function () {
+    	    $(this).next().slideToggle();
+    	   });
