@@ -210,20 +210,39 @@ html, body{
 /* スクロールアイコン部分 */
 .scroll{
     text-align: center;
-    padding-top: 830px;
+    padding-top: 780px;
     margin-bottom: 70px;
 }
 .scroll p{
     font-size: 1.1rem;
     line-height: 1.4;
-    font-weight: bold;
+    font-weight: 500;
     text-align: center;
-    letter-spacing: 0.1em;
 }
 .scroll_img{
     width: 70px;
     margin-top: 5px;
 }
+/* アイコン上下運動の実装 */
+.scroll .scroll_move{
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /* font-size: 5rem; */
+    animation: updown 2s infinite ease-in-out;
+}
+@keyframes updown {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, -8px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
 
 /* story1部分 */
 .contents_story1{
@@ -557,7 +576,7 @@ html, body{
     line-height: 75px;
     font-family: 'Cabin', sans-serif;
 }
-.wrap5_bg{
+.lifeStyle_content{
     background: #eee;
     margin-top: -40px;
     padding: 100px 0;
