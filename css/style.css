@@ -303,10 +303,9 @@ html, body{
 /* スライドショーの設定----------------------------- */
 #slideshow {
     position: relative;
-    /* width:  640px; 画像の横幅に合わせて記述
-    height: 270px; 画像の高さに合わせて記述 */
- }
- #slideshow img {
+}
+#slideshow img {
+     width: 100%;
     position: absolute;
     top: 0;
     left:0;
@@ -326,7 +325,7 @@ html, body{
     padding: 0 150px;
     display: flex;
     justify-content: space-between;
-    margin: 695px auto 96px;
+    margin: 798px auto 96px;
     align-items: center;
 }
 .inner_wrap2 .text p:first-child{
@@ -384,6 +383,7 @@ html, body{
     background-color: #eee;
     
 }
+
 /* inner_wrap4 */
 .inner_wrap4{
     background: #fff;
@@ -566,6 +566,7 @@ html, body{
     padding-top: 240px;
     font-size: 6.25px;
     background-color: #fff;
+    position: relative;
 }
 .inner_wrap5 h2{
     letter-spacing: 0.2em;
@@ -577,11 +578,104 @@ html, body{
     font-family: 'Cabin', sans-serif;
 }
 .lifeStyle_content{
+    padding: 100px 0;
     background: #eee;
     margin-top: -40px;
     padding: 100px 0;
     height: 727px;
+    
+    display: flex;
+    justify-content:right;
+    align-items: center;
 }
+.lifeStyle_contents_left{
+    width: 260px;
+}
+.lifeStyle_contents_left h3{
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    font-family: 'Noto Sans JP', sans-serif;
+    
+    margin-bottom: 40px;
+    
+}
+.lifeStyle_contents_left p{
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.lifeStyle_contents_right{
+    width: 844px;
+}
+.lifestyle_innerBox>p{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-bottom: 10px;
+}
+.lifestyle_innerBox>p span{
+    font-size: 1.9rem;
+    line-height: 2;
+    letter-spacing: 0.18em;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.lifeStyle_img{
+    margin-bottom: 10px;
+}
+.lifeStyle_commentBox p{
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.7rem;
+    line-height: 2;
+    font-weight: 500;
+}
+/* コメントの枠線css------------------------------------------- */
+.lifeStyle_commentBox{
+    position: relative;
+    display: inline-block;
+    /* margin: 1.5em 0; */
+    padding: 10px 20px;
+    width: 556px;
+    height: 90px;
+    /* max-width: 100%; */
+    /* font-size: 16px; */
+    background: #FFF;
+    border: solid 2px #ff6;
+  }
+.lifeStyle_commentBox:before {
+    content: "";
+    position: absolute;
+    bottom: -24px;
+    left: 84%;
+    /* margin-left: -15px; */
+    border: 11px solid transparent;
+    border-top: 13px solid #FFF;
+    z-index: 2;
+  }
+.lifeStyle_commentBox:after {
+    content: "";
+    position: absolute;
+    bottom: -29px;
+    margin-left: -3px;
+    left: 84%;
+    border: 14px solid transparent;
+    border-top: 13px solid #ff6;
+    z-index: 1;
+  }
+.lifeStyle_commentBox p {
+    margin: 0;
+    padding: 0;
+  }
+/* ------------------------------------------------ */
+/* lifestyle部分のスライダー */
+.lifeStyle_contents_right_inner .slick-slide {
+    margin:0 10px;/*スライド左右の余白調整*/
+}
+
 
 /* inner_wrap6 */
 .inner_wrap6,
