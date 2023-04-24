@@ -38,7 +38,7 @@ html, body{
     height: 100%;
     width: 6px;
     background: #ff6;
-
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -51,6 +51,18 @@ html, body{
     right: 0;
     top: 140px;
     z-index: 0;
+}
+/* 最初の猫のGIF */
+.wrapper{
+    /* position: relative; */
+}
+.first_cat{
+    position: fixed;
+    top: 540px;
+    right: 210px;
+}
+.first_cat img{
+    width: 50%;
 }
 
 /* ロゴ部分 */
@@ -143,7 +155,6 @@ html, body{
     position: fixed;
     right: 36px;
     top: 205px;
-    
     display: flex;
     height: 543px;
     justify-content: space-between;
@@ -177,7 +188,6 @@ html, body{
     letter-spacing: 0.2em;
 }
 
-/* inner_wrap部分 */
 .inner_wrap{
     max-width: 1380px;
     
@@ -185,6 +195,7 @@ html, body{
     margin-right: auto;
     padding: 0 150px;
 }
+
 /* contents_top部分 */
 .contents_top{
     height: 939px;
@@ -582,7 +593,7 @@ html, body{
     background: #eee;
     margin-top: -40px;
     padding: 100px 0;
-    height: 727px;
+    height: 94vh;
     
     display: flex;
     justify-content:right;
@@ -590,6 +601,7 @@ html, body{
 }
 .lifeStyle_contents_left{
     width: 260px;
+    margin-right: 110px;
 }
 .lifeStyle_contents_left h3{
     letter-spacing: 0.2em;
@@ -609,7 +621,11 @@ html, body{
     font-family: 'Noto Sans JP', sans-serif;
 }
 .lifeStyle_contents_right{
-    width: 844px;
+    /* width: 844px; */
+    width: 60vw;
+}
+.lifestyle_innerBox .slick_margin{
+    margin-right: 20px;
 }
 .lifestyle_innerBox>p{
     font-size: 1.1rem;
@@ -625,7 +641,7 @@ html, body{
     font-family: 'Noto Sans JP', sans-serif;
 }
 .lifeStyle_img{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .lifeStyle_commentBox p{
     font-family: 'Noto Serif JP', serif;
@@ -634,47 +650,53 @@ html, body{
     font-weight: 500;
 }
 /* コメントの枠線css------------------------------------------- */
-.lifeStyle_commentBox{
+.lifeStyle_commentBox {
     position: relative;
-    display: inline-block;
+    display: block;
     /* margin: 1.5em 0; */
     padding: 10px 20px;
-    width: 556px;
-    height: 90px;
-    /* max-width: 100%; */
-    /* font-size: 16px; */
+    max-width: 700px;
     background: #FFF;
     border: solid 2px #ff6;
   }
-.lifeStyle_commentBox:before {
+  
+  .lifeStyle_commentBox:before {
     content: "";
     position: absolute;
-    bottom: -24px;
-    left: 84%;
-    /* margin-left: -15px; */
-    border: 11px solid transparent;
-    border-top: 13px solid #FFF;
+    bottom: -27px;
+    left: 83%;
+    margin-left: -15px;
+    border: 12px solid transparent;
+    /* border-top: 12px solid #FFF; */
+    border-top: 16px solid #FFF;
     z-index: 2;
   }
-.lifeStyle_commentBox:after {
+  
+  .lifeStyle_commentBox:after {
     content: "";
     position: absolute;
-    bottom: -29px;
-    margin-left: -3px;
-    left: 84%;
+    bottom: -33px;
+    left: 83%;
+    margin-left: -17px;
     border: 14px solid transparent;
-    border-top: 13px solid #ff6;
+    /* border-top: 14px solid #ff6; */
+    border-top: 19px solid #ff6;
     z-index: 1;
   }
-.lifeStyle_commentBox p {
-    margin: 0;
-    padding: 0;
+  
+  .row2:before{
+    bottom: -27px;
   }
+  .row2:after{
+        bottom: -33px;
+  }
+  
 /* ------------------------------------------------ */
 /* lifestyle部分のスライダー */
-.lifeStyle_contents_right_inner .slick-slide {
-    margin:0 10px;/*スライド左右の余白調整*/
-}
+.lifeStyle_contents_right_inner .slick-list {
+    padding: 0 29% 0 0!important;
+    padding-right: 30px;
+  }
 
 
 /* inner_wrap6 */
