@@ -38,7 +38,7 @@ html, body{
     height: 100%;
     width: 6px;
     background: #ff6;
-
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -50,7 +50,32 @@ html, body{
     position: fixed;
     right: 0;
     top: 140px;
+    z-index: 1;
+}
+.sky1{
+    position: fixed;
+    right: 0;
+    top: 190px;
     z-index: 0;
+
+    height: 500px;
+    width: 699px;
+}
+/* 最初の猫のGIF */
+.wrapper{
+    /* position: relative; */
+}
+.first_cat{
+    position: fixed;
+    top: 540px;
+    right: 210px;
+    z-index: 3;
+}
+.first_cat img{
+    width: 50%;
+}
+.hide{
+	transform: translateY(-100%); /* 上に消えるようにする */
 }
 
 /* ロゴ部分 */
@@ -143,7 +168,6 @@ html, body{
     position: fixed;
     right: 36px;
     top: 205px;
-    
     display: flex;
     height: 543px;
     justify-content: space-between;
@@ -177,7 +201,6 @@ html, body{
     letter-spacing: 0.2em;
 }
 
-/* inner_wrap部分 */
 .inner_wrap{
     max-width: 1380px;
     
@@ -185,6 +208,7 @@ html, body{
     margin-right: auto;
     padding: 0 150px;
 }
+
 /* contents_top部分 */
 .contents_top{
     height: 939px;
@@ -303,10 +327,9 @@ html, body{
 /* スライドショーの設定----------------------------- */
 #slideshow {
     position: relative;
-    /* width:  640px; 画像の横幅に合わせて記述
-    height: 270px; 画像の高さに合わせて記述 */
- }
- #slideshow img {
+}
+#slideshow img {
+     width: 100%;
     position: absolute;
     top: 0;
     left:0;
@@ -326,7 +349,7 @@ html, body{
     padding: 0 150px;
     display: flex;
     justify-content: space-between;
-    margin: 695px auto 96px;
+    margin: 798px auto 96px;
     align-items: center;
 }
 .inner_wrap2 .text p:first-child{
@@ -384,6 +407,7 @@ html, body{
     background-color: #eee;
     
 }
+
 /* inner_wrap4 */
 .inner_wrap4{
     background: #fff;
@@ -566,6 +590,7 @@ html, body{
     padding-top: 240px;
     font-size: 6.25px;
     background-color: #fff;
+    position: relative;
 }
 .inner_wrap5 h2{
     letter-spacing: 0.2em;
@@ -577,11 +602,115 @@ html, body{
     font-family: 'Cabin', sans-serif;
 }
 .lifeStyle_content{
+    padding: 100px 0;
     background: #eee;
     margin-top: -40px;
     padding: 100px 0;
-    height: 727px;
+    height: 94vh;
+    
+    display: flex;
+    justify-content:right;
+    align-items: center;
 }
+.lifeStyle_contents_left{
+    width: 260px;
+    margin-right: 110px;
+}
+.lifeStyle_contents_left h3{
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    font-family: 'Noto Sans JP', sans-serif;
+    
+    margin-bottom: 40px;
+    
+}
+.lifeStyle_contents_left p{
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.lifeStyle_contents_right{
+    /* width: 844px; */
+    width: 60vw;
+}
+.lifestyle_innerBox .slick_margin{
+    margin-right: 20px;
+}
+.lifestyle_innerBox>p{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-bottom: 10px;
+}
+.lifestyle_innerBox>p span{
+    font-size: 1.9rem;
+    line-height: 2;
+    letter-spacing: 0.18em;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.lifeStyle_img{
+    margin-bottom: 20px;
+}
+.lifeStyle_commentBox p{
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.7rem;
+    line-height: 2;
+    font-weight: 500;
+}
+/* コメントの枠線css------------------------------------------- */
+.lifeStyle_commentBox {
+    position: relative;
+    display: block;
+    /* margin: 1.5em 0; */
+    padding: 10px 20px;
+    max-width: 700px;
+    background: #FFF;
+    border: solid 2px #ff6;
+  }
+  
+  .lifeStyle_commentBox:before {
+    content: "";
+    position: absolute;
+    bottom: -27px;
+    left: 83%;
+    margin-left: -15px;
+    border: 12px solid transparent;
+    /* border-top: 12px solid #FFF; */
+    border-top: 16px solid #FFF;
+    z-index: 2;
+  }
+  
+  .lifeStyle_commentBox:after {
+    content: "";
+    position: absolute;
+    bottom: -33px;
+    left: 83%;
+    margin-left: -17px;
+    border: 14px solid transparent;
+    /* border-top: 14px solid #ff6; */
+    border-top: 19px solid #ff6;
+    z-index: 1;
+  }
+  
+  .row2:before{
+    bottom: -27px;
+  }
+  .row2:after{
+        bottom: -33px;
+  }
+  
+/* ------------------------------------------------ */
+/* lifestyle部分のスライダー */
+.lifeStyle_contents_right_inner .slick-list {
+    padding: 0 29% 0 0!important;
+    padding-right: 30px;
+  }
+
 
 /* inner_wrap6 */
 .inner_wrap6,
