@@ -50,7 +50,16 @@ html, body{
     position: fixed;
     right: 0;
     top: 140px;
+    z-index: 1;
+}
+.sky1{
+    position: fixed;
+    right: 0;
+    top: 190px;
     z-index: 0;
+
+    height: 500px;
+    width: 699px;
 }
 /* 最初の猫のGIF */
 .wrapper{
@@ -60,9 +69,13 @@ html, body{
     position: fixed;
     top: 540px;
     right: 210px;
+    z-index: 3;
 }
 .first_cat img{
     width: 50%;
+}
+.hide{
+	transform: translateY(-100%); /* 上に消えるようにする */
 }
 
 /* ロゴ部分 */
