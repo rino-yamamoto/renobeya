@@ -64,20 +64,88 @@
     	    $(this).next().slideToggle();
     	   });
 
-	// 最初の猫のスクロールで消える設定
-	var startPos = 0, winScrollTop = 0;
-// scrollイベントを設定
-window.addEventListener('scroll', function () {
-    winScrollTop = this.scrollY;
-    if (winScrollTop >= startPos) {
-        // 下にスクロールされた時
-        if (winScrollTop >= 200) {
-            // 下に200pxスクロールされたら隠す
-            document.getElementById('scrollArea').classList.add('hide');
-        }
-    } else {
-        // 上にスクロールされた時
-        document.getElementById('scrollArea').classList.remove('hide');
-    }
-    startPos = winScrollTop;
-});
+    // スクロールで窓の外の景色が変わる
+	window.onscroll = function(){  
+		var scrollTop = window.pageYOffset ;  //スクロール量を代入する
+		
+		if (scrollTop < 730 ) {   //最上部に戻ってきた時
+		$(".sky1").css('opacity', '1')
+		  $('.sky1').css('transition', '0.5s')
+		
+		  $(".sky2").css('opacity', '0')
+		  $('.sky2').css('transition', '0.5s')
+
+		  $(".sky3").css('opacity', '0')
+		  $('.sky3').css('transition', '0.5s')
+		}
+		if (scrollTop > 900 ) {   //１０pxスクロールした時
+			$(".sky1").css('opacity', '0')
+			$('.sky1').css('transition', '0.5s')
+			
+			$(".sky2").css('opacity', '1')
+			$('.sky2').css('transition', '0.5s')
+			
+			$(".sky3").css('opacity', '0')
+			$('.sky3').css('transition', '0.5s')
+		}
+		if (scrollTop > 1100 ) {   //20pxスクロールした時
+			$(".sky1").css('opacity', '0')
+			$('.sky1').css('transition', '0.5s')
+			
+			$(".sky2").css('opacity', '0')
+			$('.sky2').css('transition', '0.5s')
+			
+			$(".sky3").css('opacity', '1')
+			$('.sky3').css('transition', '0.5s')
+		}
+		};
+		
+
+		// 猫部分スクロール
+		window.onscroll = function(){  
+			var scrollTop = window.pageYOffset ;  //スクロール量を代入する
+			
+			if (scrollTop < 15 ) {   //TOPから15px以内の時
+			$(".first_cat").css('opacity', '1')
+			$('.first_cat').css('transition', '0.5s')
+			$(".fadeInTrigger1").removeClass('fadeIn1');// 画面外に出たらfadeUpというクラス名を外す			
+			
+			$(".second_cat").css('opacity', '0')
+			$('.second_cat').css('transition', '0.5s')
+		}
+		if (scrollTop > 15 ) {   //15pxスクロールした時
+			$(".first_cat").css('opacity', '0')
+			$('.first_cat').css('transition', '0.5s')
+			
+			$(".second_cat").css('opacity', '1')
+			$('.second_cat').css('transition', '0.5s')
+		
+			// 猫が左に移動
+			// 動きのきっかけとなるアニメーションの名前を定義
+			function fadeAnime(){
+				
+				// ふわっ
+				$('.fadeInTrigger1').each(function(){ //fadeUpTriggerというクラス名が
+					var elemPos = $(this).offset().top-50;//要素より、50px上の
+					var scroll = $(window).scrollTop();
+					var windowHeight = $(window).height();
+					if (scroll >= elemPos - windowHeight){
+				  $(this).addClass('fadeIn1');// 画面内に入ったらfadeUpというクラス名を追記
+				  }else{
+				  $(this).removeClass('fadeIn1');// 画面外に出たらfadeUpというクラス名を外す
+				  }
+				  });
+			  }
+			  
+			  // 画面をスクロールをしたら動かしたい場合の記述
+				$(window).scroll(function (){
+				  fadeAnime();/* アニメーション用の関数を呼ぶ*/
+				});// ここまで画面をスクロールをしたら動かしたい場合の記述
+			  
+			  // 画面が読み込まれたらすぐに動かしたい場合の記述
+				$(window).on('load', function(){
+				  fadeAnime();/* アニメーション用の関数を呼ぶ*/
+				});// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+			
+		}
+		};
