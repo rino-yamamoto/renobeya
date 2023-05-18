@@ -120,32 +120,55 @@
 			$(".second_cat").css('opacity', '1')
 			$('.second_cat').css('transition', '0.5s')
 		
-			// 猫が左に移動
-			// 動きのきっかけとなるアニメーションの名前を定義
-			function fadeAnime(){
-				
-				// ふわっ
-				$('.fadeInTrigger1').each(function(){ //fadeUpTriggerというクラス名が
-					var elemPos = $(this).offset().top-50;//要素より、50px上の
-					var scroll = $(window).scrollTop();
-					var windowHeight = $(window).height();
-					if (scroll >= elemPos - windowHeight){
-				  $(this).addClass('fadeIn1');// 画面内に入ったらfadeUpというクラス名を追記
-				  }else{
-				  $(this).removeClass('fadeIn1');// 画面外に出たらfadeUpというクラス名を外す
-				  }
-				  });
-			  }
-			  
-			  // 画面をスクロールをしたら動かしたい場合の記述
-				$(window).scroll(function (){
-				  fadeAnime();/* アニメーション用の関数を呼ぶ*/
-				});// ここまで画面をスクロールをしたら動かしたい場合の記述
-			  
-			  // 画面が読み込まれたらすぐに動かしたい場合の記述
-				$(window).on('load', function(){
-				  fadeAnime();/* アニメーション用の関数を呼ぶ*/
-				});// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+		// 猫が左に移動
+		// 動きのきっかけとなるアニメーションの名前を定義
+		function fadeAnime(){
 			
+			// ふわっ
+			$('.fadeInTrigger1').each(function(){ //fadeUpTriggerというクラス名が
+				var elemPos = $(this).offset().top-50;//要素より、50px上の
+				var scroll = $(window).scrollTop();
+				var windowHeight = $(window).height();
+				if (scroll >= elemPos - windowHeight){
+				$(this).addClass('fadeIn1');// 画面内に入ったらfadeUpというクラス名を追記
+				}else{
+				$(this).removeClass('fadeIn1');// 画面外に出たらfadeUpというクラス名を外す
+				}
+				});
+			}
+			
+			// 画面をスクロールをしたら動かしたい場合の記述
+			$(window).scroll(function (){
+				fadeAnime();/* アニメーション用の関数を呼ぶ*/
+			});// ここまで画面をスクロールをしたら動かしたい場合の記述
+			
+			// 画面が読み込まれたらすぐに動かしたい場合の記述
+			$(window).on('load', function(){
+				fadeAnime();/* アニメーション用の関数を呼ぶ*/
+			});// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+		
 		}
 		};
+
+
+		// りの部屋でできる3つのこと のスライド実装
+		$('.slider').slick({
+			autoplay: true,//自動的に動き出すか。初期値はfalse。
+			autoplaySpeed: 3000,//次のスライドに切り替わる待ち時間
+			speed:1000,//スライドの動きのスピード。初期値は300。
+			infinite: true,//スライドをループさせるかどうか。初期値はtrue。
+			slidesToShow: 1,//スライドを画面に3枚見せる
+			slidesToScroll: 1,//1回のスクロールで3枚の写真を移動して見せる
+			arrows: true,//左右の矢印あり
+			prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
+			nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
+			dots: true,//下部ドットナビゲーションの表示
+			pauseOnFocus: false,//フォーカスで一時停止を無効
+			pauseOnHover: false,//マウスホバーで一時停止を無効
+			pauseOnDotsHover: false,//ドットナビゲーションをマウスホバーで一時停止を無効
+		});
+	
+		//スマホ用：スライダーをタッチしても止めずにスライドをさせたい場合
+		$('.slider').on('touchmove', function(event, slick, currentSlide, nextSlide){
+			$('.slider').slick('slickPlay');
+		});
