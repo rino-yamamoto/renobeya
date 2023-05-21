@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
         <title>りの部屋</title>
     </head>
@@ -174,7 +174,7 @@
                             <img src="img/service-img1.jpeg" alt="イラスト画像">
                         </div>
                     </div>
-                    <div class="wrap3_slider">
+                    <div class="wrap3_slider slider-item">
                         <div class="slider_title">
                             <p class="num">2</p>
                             <p>自分だけの<br>
@@ -184,7 +184,7 @@
                             <img src="img/service-img2.jpeg" alt="イラスト画像">
                         </div>
                     </div>
-                    <div class="wrap3_slider">
+                    <div class="wrap3_slider slider-item">
                         <div class="slider_title">
                             <p class="num">3</p>
                             <p>「住む」を楽しむ！</p>
@@ -202,7 +202,6 @@
                     <h2 class="text-divider">WORKS</h2>
                     <p>施工事例</p>
                 </div>
-                <!-- 🌟8枚の画像のスライド -->
                 <div class="works_slider">                                  
                     <ul class="slider">
                         <li><a href="">
@@ -674,11 +673,9 @@
                                $active.removeClass('active last-active');
                           });
                     }
-                    
                     $(function() {
                        setInterval( "slideSwitch()", 4000 );
                     });
-
                     </script>
                 
                 <!-- worksのスライド -->
