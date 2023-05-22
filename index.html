@@ -193,8 +193,15 @@
                             <img src="img/service-img3.jpeg" alt="イラスト画像">
                         </div>
                     </div>
+                </div> 
 
-                </div>                            <!-- 🌟ここ後でコーディングする。 -->
+                <!-- ボタン部分 -->
+                <div class="view_more_btn">
+                    <a href="">
+                        <p>「りの部屋」のサービスについて<img src="img/next-arrow.png" alt="矢印の画像"></p>
+                        <div class="btntransform"></div>
+                    </a>
+                </div>
             </section><!-- .inner_wrap3 -->
             
             <section class="inner_wrap4">
@@ -237,11 +244,13 @@
                             <img class="more_arrow" src="img/more-arrow.png" alt="矢印の画像">
                             <span class="yellow"><img src="img/work-8.jpg" alt="部屋の写真"></span>Don't think. feel!<span>東京都江戸川区/4LDK</span></a></li>
                     </ul>
-                </div>                            
-                <!-- ボタン部分 -->
+                </div>  
+
+                 <!-- ボタン部分 -->
                 <div class="view_more_btn">
-                    <a href="">
-                        <p>施工事例をもっと見る<span><img src="img/next-arrow.png" alt="矢印の画像"></span></p>
+                    <a class="about_service" href="">
+                        <p>施工事例をもっと見る<img src="img/next-arrow.png" alt="矢印の画像"></p>
+                        <div class="btntransform"></div>
                     </a>
                 </div>
             </section><!-- .inner_wrap4 -->
@@ -419,10 +428,10 @@
                             </div>
                             <div class="contact_form">
                                 <div class="contact_form_inner first_form_inner">
-                                    <p class="form_item">お問い合わせ内容</p>
+                                    <p class="form_item">お問い合わせ内容<span>*</span></p>
                                     <div class="check_list">
                                         <ul>
-                                            <li><label><input type="checkbox" name="check">資料請求</label></li>          <!-- 🌟今回の場合、inputタグを使わない方がいいのか…？ -->
+                                            <li><label><input type="checkbox" name="check">資料請求</label></li>
                                             <li><label><input type="checkbox" name="check">りの部屋について</label></li>
                                             <li><label><input type="checkbox" name="check">来店予約</label></li>
                                             <li><label><input type="checkbox" name="check">その他</label></li>
@@ -430,7 +439,7 @@
                                     </div>
                                 </div>
                                 <div class="contact_form_inner">
-                                    <p class="form_item">お名前</p>
+                                    <p class="form_item">お名前<span>*</span></p>
                                     <div class="form_answer">
                                         <ul class="space">
                                             <li><input class="text_inner" type="text" value="" placeholder="山田"></li>
@@ -448,25 +457,25 @@
                                     </div>
                                 </div>
                                 <div class="contact_form_inner">
-                                    <p class="form_item">電話番号</p>
+                                    <p class="form_item">電話番号<span>*</span></p>
                                     <div class="text_box">
                                         <input class="text_inner" type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="000-0000-0000">
                                     </div>
                                 </div>
                                 <div class="contact_form_inner">
-                                    <p class="form_item">メールアドレス</p>
+                                    <p class="form_item">メールアドレス<span>*</span></p>
                                     <div class="text_box">
                                         <input class="text_inner" type="email" value="" placeholder="example@renove-realcube.com">
                                     </div>
                                 </div>
                                 <div class="contact_form_inner">
-                                    <p class="form_item">メールアドレス(確認用)</p>
+                                    <p class="form_item">メールアドレス(確認用)<span>*</span></p>
                                     <div class="text_box">
                                         <input class="text_inner" type="email" value="" placeholder="example@renove-realcube.com">
                                     </div>
                                 </div>
                                 <div class="contact_form_inner">
-                                    <p class="form_item">住所</p>
+                                    <p class="form_item">住所<span>*</span></p>
                                     <div class="form_answer">
                                         <ul class="text_area1 address_box">
                                             <li><input type="text" name="postal_code" minlength="7" maxlength="8" pattern="\d*" autocomplete="shipping postal-code" placeholder="〒103-0006"></li>
@@ -481,7 +490,13 @@
                                     </div>
                                 </div>
                                 
-                                <button>確認ボタン（仮）</button>
+                                   <!-- ボタン部分 -->
+                                <div class="view_more_btn">
+                                    <a class="double_check" href="">
+                                        <p>確認する<img src="img/next-arrow.png" alt="矢印の画像"></p>
+                                        <div class="btntransform"></div>
+                                    </a>
+                                </div>
                                 
                                 <!-- <div class="policy_wrap"> -->
                                     <div class="policy">

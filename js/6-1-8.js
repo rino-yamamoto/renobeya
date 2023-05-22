@@ -167,3 +167,15 @@
 			pauseOnHover: false,//マウスホバーで一時停止を無効
 			pauseOnDotsHover: false,//ドットナビゲーションをマウスホバーで一時停止を無効
 		});
+
+		// りの部屋でできる3つのこと のスライドのドットCSS変更のため、デフォルトのスタイル解除
+		$(function () {
+			$(".slider").slick({
+			  arrows: false,
+			  autoplay: true,
+			  adaptiveHeight: true,
+			  dots: true,
+			  dotsClass: "slide-dots" //ここでclass名を変更する（デフォルトはslick-dots）
+			});
+		  });
+
