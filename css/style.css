@@ -50,13 +50,13 @@ html, body{
     position: fixed;
     right: 0;
     top: 140px;
-    z-index: 4;
+    z-index: 2;
 }
 .sky1{
     position: fixed;
     right: 0;
     top: 190px;
-    z-index: 3;
+    z-index: 1;
 
     height: 500px;
     width: 699px;
@@ -66,7 +66,7 @@ html, body{
     position: fixed;
     right: 0;
     top: 190px;
-    z-index: 2;
+    z-index: 1;
 
     height: 500px;
     width: 540px;
@@ -549,12 +549,18 @@ html, body{
         background:#333;/*ドットボタンの現在地表示の色*/
     }
     .slick-initialized .slick-slide{
-        display: flex;
+        /* display: flex; */
+    }
+    /* ------------------------------------------------------------- */
+    /* ドットの設定--------------------------------------------------- */
+    .slide-dots{
+        
     }
     /* ------------------------------------------------------------- */
     
     /* inner_wrap4 */
     .inner_wrap4{
+        padding-top: 240px;
         background: #fff;
         font-size: 6.25px;
     }
@@ -692,14 +698,9 @@ html, body{
 /* view_more部分 */
 .view_more_btn{
     text-align: center;
-    
+    /* position: relative; */
 }
 .view_more_btn p{
-    position: relative;
-    top: 0;
-    right: 0;
-    z-index: 3px;
-    
     display: inline-block;
     line-height: 40px;
     letter-spacing: 0.1em;
@@ -708,10 +709,15 @@ html, body{
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
-    
-    /* transition: all 0.3s; */
 }
-.view_more_btn span{
+.view_more_btn a{
+    position: relative;
+}
+.view_more_btn a p{
+    position: relative;
+    z-index: 1;   
+}
+.btntransform{
     transition: all 0.3s;
     display: inline-block;
     border: 1px solid #000;
@@ -720,15 +726,36 @@ html, body{
     border-radius: 50%;
     
     margin-left: 7px;
+
+    position: absolute;
+    right: -15px;
+    /* z-index: 0; */
+    transition:.3s ease-out;
 }
-.view_more_btn span:hover{
-    transition: all 0.3s;
-    
+.view_more_btn a:hover .btntransform{
+    background-color: #ff6;
+    border-radius: 9999px;
+	width:277px;
 }
+.view_more_btn .about_service:hover .btntransform{
+    width:210px;   
+}
+.view_more_btn .double_check:hover .btntransform{
+    width:117px;   
+}
+
+
 .view_more_btn img{
+    margin-left: 20px;
     width: 12px;
     vertical-align: revert;
+    transition: all 0.3s;
 }
+.view_more_btn a:hover p img{
+    margin-left: 2px;
+    transition: all 0.3s;
+}
+
 
 /* inner_wrap5 */
 .inner_wrap5{
@@ -963,13 +990,11 @@ html, body{
 /* チェックリスト部分------------------------------------------ */
 .check_list{
     padding-top: 20px;
-
 }
 .check_list ul{
     display: flex;
     justify-content: space-between;
     width: 560px;
-
 }
 .check_list ul label{
     height: 54px;
@@ -1034,6 +1059,9 @@ input[type="checkbox"]::before{
     height: 15px;  
 } 
 /* -------------------------------------------------------- */
+.inner_wrap7 span{
+    color: #f3345d;
+}
 .contact_form{
     max-width: 800px;
     margin: 0 auto;
@@ -1108,6 +1136,11 @@ input[type="checkbox"]::before{
     padding-top: 20px;
     vertical-align: middle;
 
+}
+
+/* ボタン部分 */
+.inner_wrap7 .view_more_btn{
+    margin-top: 40px;
 }
 
 /* policy部分 */
