@@ -246,7 +246,7 @@ html, body{
     line-height: 50px; /* aタグのブロック真ん中に、文字を持ってくる */
     
     color: #000;
-    font-size: 1.4rem;                                                     /* ここ */
+    font-size: 1.3rem;
     font-weight: bolder;
     font-family: 'Cabin', sans-serif;
     letter-spacing: 0.2em;
@@ -459,13 +459,15 @@ html, body{
     margin: 0 auto;
     background-color: #eee;
 }
-.wrap3_slider{
+.wrap3_slider_inner{
     display: flex;
     justify-content: center;
+
 }
 .wrap3_slider .slider_title{
     max-width: 91px;
 }
+.slider_title_inner{}
 .wrap3_slider .slider_title  .num{
     text-align: center;
     color: #ff6;
@@ -526,37 +528,32 @@ html, body{
 }
 
 /*ドットナビゲーションの設定*/
-.slick-dots {
-    position: relative;
-    z-index: 3;
-      text-align:center;
-      margin:-50px 0 0 0;/*ドットの位置*/
+    .inner_wrap3_dots{
+        display: flex;
+        justify-content: center;
     }
-    .slick-dots li {
-        display:inline-block;
-        margin:0 5px;
+    .inner_wrap3_dots li{
+        position: relative;
+
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin: 0 5px;
     }
-    .slick-dots button {
-        color: transparent;
-        outline: none;
-        width:8px;/*ドットボタンのサイズ*/
-        height:8px;/*ドットボタンのサイズ*/
-        display:block;
-        border-radius:50%;
-        background:#fff;/*ドットボタンの色*/
-    }
-    .slick-dots .slick-active button{
-        background:#333;/*ドットボタンの現在地表示の色*/
-    }
-    .slick-initialized .slick-slide{
-        /* display: flex; */
-    }
-    /* ------------------------------------------------------------- */
-    /* ドットの設定--------------------------------------------------- */
-    .slide-dots{
+    .inner_wrap3_dots button{
+        font-family: 'Cabin', sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: 0.15em;
+        font-weight: 500;
         
+        position: absolute;
+        right: 8px;
+        top: 5px;
     }
-    /* ------------------------------------------------------------- */
+    .inner_wrap3_dots .slick-active{
+        border: 1px solid #000;
+        background-color: #ff6;/*ドットボタンの現在地表示の色*/
+    }
     
     /* inner_wrap4 */
     .inner_wrap4{
