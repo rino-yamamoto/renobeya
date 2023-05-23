@@ -152,7 +152,7 @@
 
 			
 		// りの部屋でできる3つのこと のスライド実装
-		$('.inner_wrap3_slider').slick({
+		$('.synchro-slider').slick({
 			fade:false,//切り替えをフェードで行う。初期値はfalse。
 			autoplay: false,//自動的に動き出すか。初期値はfalse。
 			autoplaySpeed: 0,//次のスライドに切り替わる待ち時間
@@ -168,14 +168,12 @@
 			pauseOnDotsHover: false,//ドットナビゲーションをマウスホバーで一時停止を無効
 		});
 
-		// りの部屋でできる3つのこと のスライドのドットCSS変更のため、デフォルトのスタイル解除
+		// りの部屋でできる3つのこと のスライドのドットCSS変更
 		$(function () {
-			$(".slider").slick({
+			$(".inner_wrap3_slider").slick({
 			  arrows: false,
-			  autoplay: true,
-			  adaptiveHeight: true,
 			  dots: true,
-			  dotsClass: "slide-dots" //ここでclass名を変更する（デフォルトはslick-dots）
+			  dotsClass: "inner_wrap3_dots" //ここでclass名を変更する（デフォルトはslick-dots）
 			});
 		  });
-
+		  
