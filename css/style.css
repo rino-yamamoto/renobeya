@@ -454,15 +454,14 @@ html, body{
     font-weight: bold;
 }
 .inner_wrap3_slider{
-    height: 800px;
+    height: auto;
     width: 680px;
     margin: 0 auto;
-    background-color: #eee;
 }
 .wrap3_slider_inner{
     display: flex;
     justify-content: center;
-
+    margin-top: 55px;
 }
 .wrap3_slider .slider_title{
     max-width: 91px;
@@ -507,30 +506,32 @@ html, body{
 }
 
 /*矢印の設定*/
-.slick-prev, 
-.slick-next {
+.slick-prev{
+    opacity: 0;
+}
+.slick-arrow {
     position: absolute;
-    z-index: 3;
-    top: 42%;
-    outline: none;/*クリックをしたら出てくる枠線を消す*/
-    border-top: 2px solid #fff;/*矢印の色*/
-      border-right: 2px solid #fff;/*矢印の色*/
-      height: 25px;
-      width: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
   }
-  .slick-prev {/*戻る矢印の位置と形状*/
-    left:2.5%;
-    transform: rotate(-135deg);
+  .slick-next {
+    width: 60px;
+    height: auto;
+    right: 0px;
+    transition: 0.3s;
 }
-.slick-next {/*次へ矢印の位置と形状*/
-    right:2.5%;
-    transform: rotate(45deg);
-}
+.slick-next:hover{
+    right: -20px;
+    transition: 0.3s;
+  }
 
 /*ドットナビゲーションの設定*/
     .inner_wrap3_dots{
         display: flex;
         justify-content: center;
+        margin-top: -22px;
     }
     .inner_wrap3_dots li{
         position: relative;
@@ -638,7 +639,7 @@ html, body{
 .more_btn {
     position: absolute;
     top: 0;
-    right: 2px;
+    right: 0px;
 
     border-right: 70px solid #ff6;
     border-bottom: 70px solid transparent; 
@@ -694,8 +695,8 @@ html, body{
 
 /* view_more部分 */
 .view_more_btn{
+    margin-top: 60px;
     text-align: center;
-    /* position: relative; */
 }
 .view_more_btn p{
     display: inline-block;
@@ -740,6 +741,15 @@ html, body{
 .view_more_btn .double_check:hover .btntransform{
     width:117px;   
 }
+.view_more_btn .about_lifeStyle:hover .btntransform{
+    width:303px;   
+}
+.about_lifeStyle .btntransform{
+    top: -16px;
+} 
+.inner_wrap5 .view_more_btn{
+    margin-left: -35px;
+}
 
 
 .view_more_btn img{
@@ -782,8 +792,8 @@ html, body{
     align-items: center;
 }
 .lifeStyle_contents_left{
-    width: 260px;
-    margin-right: 110px;
+    width: 313px;
+    margin-right: 60px;
 }
 .lifeStyle_contents_left h3{
     letter-spacing: 0.2em;
@@ -918,7 +928,7 @@ html, body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1029px;
+    max-width: 1200px;/* 🌟 */
 }
 .faq_inner{
     margin: 0 60px 20px 0;
@@ -932,7 +942,7 @@ html, body{
     border: 1px solid #eee;
     padding: 26px 20px 26px 70px;
     display: inline-block;
-    width: 484.5px;
+    width: 570px;
     height: 122px;
     
     font-size: 1.7rem;
@@ -981,7 +991,10 @@ html, body{
 }
 .contents {
     display: none;
-  }
+}
+/* .menu_border{
+    border: 1px solid #000;
+} */
 
 /* inner_wrap7 */
 /* チェックリスト部分------------------------------------------ */
@@ -1469,3 +1482,14 @@ footer ul li a{
     vertical-align: text-bottom;
 }
 
+
+/* レスポンシブ（タブレット）**************************************************************** */
+@media screen and (max-width: 1025px) {
+    
+}
+
+/* ************************************************************************************** */
+/* レスポンシブ（タブレット）**************************************************************** */
+@media screen and (max-width: 640px) {
+    
+}
