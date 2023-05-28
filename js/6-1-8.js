@@ -58,11 +58,23 @@
 			// 	}
 			// ]
 		});
+
+
+		// ハンバーガーメニュー
+		$(".openbtn").click(function () {//ボタンがクリックされたら
+			$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+			$("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+		});
+		$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+			$(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+			$("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+		});
+		
 		
 		// FAQのアコーディオン実装
-		$(".js-menu").on("click", function () {
+		$("#js-menu").on("click", function () {
 			$(this).next().slideToggle();
-			$(this).addClass('.menu_border');
+			$(this).toggleClass('menu-border');			
 		});
 		
 		// スクロールで窓の外の景色が変わる
