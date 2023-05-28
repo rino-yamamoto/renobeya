@@ -85,7 +85,6 @@ html, body{
     opacity: 0;
 }
 
-
 /* 最初の猫のGIF */
 .first_cat{
     position: fixed;
@@ -115,28 +114,29 @@ html, body{
     animation-duration: 6s;
     animation-timing-function: ease;
     }
-    @keyframes fadeUpAnime{
-      from {
-        /* opacity: 1; */
-      transform: translateX(0);
-      }
-    
-      to {
-        /* opacity: 1; */
-      transform: translateX(-1300px);
-      }
+@keyframes fadeUpAnime{
+    from {
+    /* opacity: 1; */
+    transform: translateX(0);
     }
 
-
+    to {
+    /* opacity: 1; */
+    transform: translateX(-1300px);
+    }
+}
 
 /* ロゴ部分 */
-.logo{
+.logo_for_pc{
     width: 80px;
     height: 130px;
 
     position: fixed;
     top: 40px;
     left: 40px;
+}
+.logo_for_sp{
+    display: none;
 }
 
 /* SNSアイコン */
@@ -213,6 +213,139 @@ html, body{
     letter-spacing: 0.1em;
     font-family: 'Noto Sans JP', sans-serif;
 }
+/* ハンバーガーメニュー---------------------------------------------------- */
+.hamburger{
+    display: none;
+}
+#g-nav{
+    position:fixed;
+    z-index: -1;
+    /*ナビのスタート位置と形状*/
+	top:-120%;
+    left:0;
+	width:100%;
+    height: 100vh;/*ナビの高さ*/
+	background:#ff6;
+    /*動き*/
+	transition: all 0.6s;
+}
+.g-nav-icon{
+    position: relative;
+    z-index: 1;
+}
+.g_nav_sns{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+.g_nav_sns a{
+    padding: 0 20px;
+}
+.g_nav_sns .img{
+    height: 20px;
+    width: 20px;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    top: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:52%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+#g-nav li{
+	list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+    letter-spacing: 0.2em;
+    padding: 19px 0;
+    display: block;
+    border-radius: 24px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    margin: 0 5px;
+    font-size: 4em;
+    font-weight: bold;
+    color: #000;
+    font-family: 'Cabin', sans-serif;
+
+}
+
+/*========= ボタンのためのCSS ===============*/
+.hamburger_bg{
+    background-color: #ff6;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    right: 20px;
+    top: 20px;
+    position: absolute;
+}
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:27px;
+	right: 11px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+	
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .3s;
+    position: absolute;
+    left: 14px;
+    height: 1px;
+	background-color: #000;
+  	width: 16px;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: rotate(-30deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+    top: 18px;
+    left: 18px;
+    transform: rotate(30deg);
+    width: 30%;
+}
+/* -------------------------------------------------------------------- */
 
 /* nav部分 */
 .header_nav{
@@ -300,11 +433,6 @@ html, body{
 }
 /* アイコン上下運動の実装 */
 .scroll .scroll_move{
-    /* position: absolute;
-    top: 50%;
-    left: 50%; */
-    /* transform: translate(-50%, -50%); */
-    /* font-size: 5rem; */
     animation: updown 2s infinite ease-in-out;
 }
 @keyframes updown {
@@ -487,22 +615,8 @@ html, body{
 }
 .slider_illust{
     max-width: 500px;
-    /* height: 320px; */
     margin: 0 24.5px;
     margin-top: 74px;
-}
-/* スライダーの設定----------------------------------------------- */
-.inner_wrap3_slider {
-    /* position:relative;
-    z-index: 1; */
-    /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
-    /* height: 100vh; *//*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
-}
-/*　背景画像設定　*/
-
-.inner_wrap3_slider {
-    /* width: 100%; *//*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
-    /* height:100vh; *//*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
 }
 
 /*矢印の設定*/
@@ -882,7 +996,6 @@ html, body{
   .row2:after{
         bottom: -33px;
   }
-  
 /* ------------------------------------------------ */
 /* lifestyle部分のスライダー */
 .lifeStyle_contents_right_inner .slick-list {
@@ -984,17 +1097,13 @@ html, body{
     letter-spacing: 0.15em;
 }
 /* アコーディオンの実装 */
-.menu:active,
-.menu.is-active {
-  border: 1px solid #000;
-  background-color: #ff6;
-}
 .contents {
     display: none;
 }
-/* .menu_border{
-    border: 1px solid #000;
-} */
+.menu-border{
+    background-color: #ff6;
+    outline: 1px solid #000;
+}
 
 /* inner_wrap7 */
 /* チェックリスト部分------------------------------------------ */
@@ -1069,6 +1178,7 @@ input[type="checkbox"]::before{
     height: 15px;  
 } 
 /* -------------------------------------------------------- */
+
 .inner_wrap7 span{
     color: #f3345d;
 }
@@ -1192,21 +1302,24 @@ input[type="checkbox"]::before{
 
 /* inner_wrap8部分 */
 .inner_wrap8{
-    padding: 240px 0 150px;
+    padding: 240px 0 1px;
     margin: 0 auto;
 }
 .inner_wrap8 .content{
-    padding: 0 200px;
+    padding: 0 0 150px;
     margin-top: 80px;
 }
 .content ul{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 .content li{
-    width: 237px;
+    width: 280px;
     height: 225px;
+    margin-right: 27px;
+}
+.content li:last-child{
+    margin-right: 0;
 }
 .content a{
     color: #000;
@@ -1398,38 +1511,6 @@ footer nav{
     line-height: 1.4;
 }
 
-/* footer nav{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
-    margin: 0 auto;
-    width: 800px;
-}
-.nav_menu{
-    width: 50%;
-}
-.nav_menu ul{
-    display: flex;
-    justify-content: flex-start;
-}
-.footer_icon{
-    width: 50%;
-}
-footer ul li{
-    
-}
-footer ul li:hover{
-}
-footer ul li a{
-    
-    width: 123px;
-    height: 50px;
-    display: inline-block;
-} */
-
-
-
-
 /* contactボタン部分 */
 .contact_btn{
     cursor: pointer;
@@ -1485,6 +1566,1425 @@ footer ul li a{
 
 /* レスポンシブ（タブレット）**************************************************************** */
 @media screen and (max-width: 1025px) {
+
+/* 共通設定 */
+html, body{
+    /* font-size: 62.5%;  *//* =htmlの初期設定の文字の大きさの、16px */
+    /* letter-spacing: 0.15em; */
+}
+/* index設定 */
+.header{
+    /* z-index: 100; */
+    /* position: relative; */
+}
+.main{
+    /* z-index: 50; */
+    /* position: relative; */
+}
+
+/* 左側の黄色い線 */
+.yellow_line{
+    height: 6px;
+    width: 100%;
+    /* background: #ff6; */
+    
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+}
+
+/* 背景画像部分 */
+.background{
+    position: relative;
+}
+.window_img{
+    position: absolute;
+    width: 400px;
+    right: 48%;
+    transform: translate(50%,0);
+    top: 395px;
+    /* z-index: 2; */
+}
+.sky_wrap{
+    position: relative;
+}
+.sky1{
+    position: absolute;
+    right: 48%;
+    transform: translate(50%,0);
+    top: 395px;
+    z-index: 1;
+
+    height: 333px;
+    width: 333px;
+    object-fit: cover;
+}
+.sky2{
+    position: absolute;
+    right: 48%;
+    transform: translate(50%,0);
+    top: 395px;
+    z-index: 1;
+
+    height: 333px;
+    width: 333px;
+    object-fit: cover;
+    /* opacity: 0; */
+}
+.sky3{
+    position: absolute;
+    right: 48%;
+    transform: translate(50%,0);
+    top: 395px;
+    z-index: 1;
+
+    height: 333px;
+    width: 333px;
+    object-fit: cover;
+    /* opacity: 0; */
+}
+
+/* 最初の猫のGIF */
+.annimal_wrap{
+    position: relative;
+}
+.first_cat{
+    position: absolute;
+    top: 540px;
+    right: 290px;
+    /* z-index: 5; */
+}
+.first_cat img{
+    width: 50%;
+}
+.second_cat{
+    position: absolute;
+    top: 540px;
+    right: 290px;
+    /* z-index: 5; */
+    /* opacity: 0; */
+}
+.second_cat img{
+    /* width: 50%; */
+}
+/* 猫が横移動する */
+.fadeIn1{
+    /* animation-name:fadeUpAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    animation-duration: 6s;
+    animation-timing-function: ease; */
+    }
+/* @keyframes fadeUpAnime{
+    from {
+    opacity: 1;
+    transform: translateX(0);
+    }
+
+    to {
+    opacity: 1;
+    transform: translateX(-1300px);
+    }
+} */
+
+/* ロゴ部分 */
+.header_banner{
+    position: relative;
+    position: fixed;
+    top: 6px;
+    padding: 20px;
+
+    width: 100%;
+    height: 80px;
+}
+.header_banner .logo_for_pc{
+    display: none;
+}
+.logo_for_sp{
+    display: block;
+    width: 96px;
+    height: 40px;
+    margin-top: 0px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+/* SNSアイコン */
+.wrapper{
+    height: 100%;
+}
+.sns{
+    display: none;
+}
+.sns_outline a, .doc_req_outline a{
+    /* display: block;
+    padding: 10px 0 3px 10px; */
+}
+.sns .img{
+    /* height: 20px;
+    width: 20px; */
+}
+.sns_outline{
+    /* border: 1px solid transparent; 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.3s; */
+}
+.sns_outline:hover{
+    /* border: 1px solid #000;
+    background-color: #ff6;
+    transition: 0.3s; */
+}
+
+/* 資料請求部分 */
+.doc_req_outline{
+    /* border: 1px solid #000; */
+    /* width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.3s; */
+    /* position: relative; */
+}
+.doc_req .doc_req_outline:hover{
+    /* background-color: #ff6;
+    transition: 0.3s; */
+}
+.doc_req_outline a{
+    /* display: block; */
+    /* padding: 9px 0 0 12px; */
+}
+.doc_req{
+    position: absolute;
+    top: 25%;
+    right: 0;
+}
+.envelope_img{
+    /* width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%); */
+}
+.doc_req .vertical{
+    display: none;
+}
+.hamburger{
+    display: block;
+}
+
+/* nav部分 */
+.header_nav{
+    display: none;
+}
+.header_nav li{
+    /* margin: 5px 0;
+    margin: 5px 0;
+    border-radius: 24px;
+    
+    border: 1px solid transparent; 
+    transition: 0.3s; */
+}
+.header_nav li:hover{
+    /* border: 1px solid #000;
+    transition: 0.3s;
+    background-color: #ff6; */
+    
+}
+.header_nav li a{
+    /* display: block;
+    text-align: center;
+    height: 124px;
+    width: 50px;
+    line-height: 50px; 
+    
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 0.2em; */
+}
+
+.inner_wrap{
+    max-width: 1380px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 150px;
+}
+
+/* contents_top部分 */
+.contents_top{
+    height: 939px;
+    position: absolute;
+    font-size: 6.25px;
+}
+.contents_top h1{
+    writing-mode: vertical-rl;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 6.5em;
+    font-weight: 200;
+    letter-spacing: 0.16em;
+    
+    line-height: 77px;
+    display: block;
+    
+    position: relative;
+    top: 50%;
+    transform:translate(0,-50%);
+    left: 125px;
+}
+
+/* スクロールアイコン部分 */
+.scroll{
+    text-align: center;
+    padding-top: 780px;
+    margin-bottom: 70px;
+}
+.scroll p{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: center;
+}
+.scroll_img{
+    width: 70px;
+    margin-top: 5px;
+}
+/* アイコン上下運動の実装 */
+.scroll .scroll_move{
+    animation: updown 2s infinite ease-in-out;
+}
+@keyframes updown {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, -8px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+/* story1部分 */
+.contents_story1{
+    height: 1100px;
+}
+.inner_contents_story1{
+    position: relative;
+    left: 100px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.inner_contents_story1, .inner_contents_story2{
+    writing-mode: vertical-rl;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.2rem;
+    line-height: 2.2em;
+    letter-spacing: 0.15em;
+    
+}
+
+/* story2部分 */
+.contents_story2{
+    height: 1100px;
+}
+.inner_contents_story2{
+    position: relative;
+    left: 100px;
+    top: 423px;
+}
+
+/* inner_wrap2 */
+.inner_wrap2{
+    padding-top: 240px;
+    background-color: #fff;
+    z-index: 50;
+}
+.inner_wrap2 .logo_img2{
+    width: 260px;
+    margin: 20px auto 40px;
+    display: block;
+} 
+.inner_wrap2 h2{
+    text-align: center;
+    font-size: 34px;
+    line-height: 34px;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000; */
+}
+.inner_wrap2 .title{
+    margin-bottom: 50px;
+}
+.inner_wrap2 #slideshow{
+    width: 100%;
+}
+/* スライドショーの設定----------------------------- */
+#slideshow {
+    position: relative;
+}
+#slideshow img {
+     width: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 8;
+    opacity: 0.0;
+ }
+ #slideshow img.active {
+    z-index: 10;
+    opacity: 1.0;
+ }
+ #slideshow img.last-active {
+    z-index: 9;
+ }
+ /* --------------------------------------------- */
+.inner_wrap2 .text{
+    max-width: 1380px;
+    padding: 0 150px;
+    display: flex;
+    justify-content: space-between;
+    margin: 798px auto 96px;
+    align-items: center;
+}
+.inner_wrap2 .text p:first-child{
+    width: 38%;
+    padding-right: 10px;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 1.8;
+    letter-spacing: 0.12em;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-feature-settings: "palt";
+}
+.inner_wrap2 .text p:last-child{
+    width: calc(1080px - 38%);
+    line-height: 2.2em;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    
+    font-family: 'Noto Sans JP', sans-serif;
+    font-feature-settings: "palt"                    /* 「」や句読点などの、文字の左づめ */
+}
+
+/* inner_wrap3 */
+.inner_wrap3{
+    padding-top: 200px;
+    background-color: #fff;
+}
+.inner_wrap3 .title{
+    display: flex;
+    margin: 0 auto;
+}
+.inner_wrap3 .logo_img2{
+    width: 260px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}
+.inner_wrap3 h2{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 1.8;
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+}
+.inner_wrap3 h2 span{
+    color: #fff;
+    font-size: 2.7em;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    vertical-align: -3%;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+}
+.inner_wrap3_slider{
+    height: auto;
+    width: 680px;
+    margin: 0 auto;
+}
+.wrap3_slider_inner{
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+}
+.wrap3_slider .slider_title{
+    max-width: 91px;
+}
+.slider_title_inner{}
+.wrap3_slider .slider_title  .num{
+    text-align: center;
+    color: #ff6;
+    font-size: 16em;
+    text-align: center;
+    display: block;
+    margin: auto;
+    font-weight: 700;
+    font-family: 'Cabin', sans-serif;
+}
+.slider_title p:last-child{
+    margin: -64px auto 0;
+    font-family: "リュウミン R-KL", "Noto Serif JP","游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro";
+    font-size: 2.4rem;
+    line-height: 1.9;
+    letter-spacing: 0.09em;
+    writing-mode: vertical-rl;
+}
+.slider_illust{
+    max-width: 500px;
+    margin: 0 24.5px;
+    margin-top: 74px;
+}
+
+/*矢印の設定*/
+.slick-prev{
+    opacity: 0;
+}
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+  }
+  .slick-next {
+    width: 60px;
+    height: auto;
+    right: 0px;
+    transition: 0.3s;
+}
+.slick-next:hover{
+    right: -20px;
+    transition: 0.3s;
+  }
+
+/*ドットナビゲーションの設定*/
+    .inner_wrap3_dots{
+        display: flex;
+        justify-content: center;
+        margin-top: -22px;
+    }
+    .inner_wrap3_dots li{
+        position: relative;
+
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin: 0 5px;
+    }
+    .inner_wrap3_dots button{
+        font-family: 'Cabin', sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: 0.15em;
+        font-weight: 500;
+        
+        position: absolute;
+        right: 8px;
+        top: 5px;
+    }
+    .inner_wrap3_dots .slick-active{
+        border: 1px solid #000;
+        background-color: #ff6;/*ドットボタンの現在地表示の色*/
+    }
+    
+    /* inner_wrap4 */
+    .inner_wrap4{
+        padding-top: 240px;
+        background: #fff;
+        font-size: 6.25px;
+    }
+    .inner_wrap4 .title{
+        margin-bottom: 80px;
+    }
+    .inner_wrap4 h2{
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    font-size: 12em;
+    text-align: center;
+    line-height: 75px;
+    font-family: 'Cabin', sans-serif;
+}
+.inner_wrap4 .title p{
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    text-align: center;
+}
+/* タイトル部分の装飾--------------------------- */
+.text-divider{
+    display: flex;
+    align-items: center;
+}
+.text-divider::before,.text-divider::after {
+    content: '';
+    height: 1px;
+    background-color: #333;
+    flex-grow: 1;
+}
+.text-divider::before {
+    margin-right: 20px;
+}
+.text-divider::after {
+    margin-left: 20px;
+}
+/* ----------------------------------------- */
+/* 8枚の画像のスライド----------------------- */
+.works_slider{
+    margin-bottom: 60px;
+}
+.works_slider li a{
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #000;
+    font-size: 1.7rem;
+    line-height: 2;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-feature-settings: "palt"
+}
+.works_slider li a img{
+    margin-bottom: 10px;
+}
+.works_slider li a span{
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    font-weight: normal;
+}
+/*　スライダーのためのcss　*/
+.slider li .yellow {
+    max-width:327px;/*スライダー内の画像を横幅100%に*/
+    max-height: 496px;;
+}
+.slider .slick-slide {
+    margin-right: 40px;/*スライド左右の余白調整*/
+}
+/*　画像が黄色くhoverする実装　*/
+.slider li a{
+    position: relative;
+}
+.more_btn {
+    position: absolute;
+    top: 0;
+    right: 0px;
+
+    border-right: 70px solid #ff6;
+    border-bottom: 70px solid transparent; 
+    height: 0;
+    width: 0;
+
+    opacity: 1;
+    transition: 0.3s;
+  }
+  .more_btn p{
+    z-index: 10;
+    position: absolute;
+    transform: rotate(45deg);
+    right: -63px;
+    top: 19px;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    font-family: 'Cabin', sans-serif;
+
+    opacity: 1;
+    transition: 0.3s;
+}
+.more_arrow{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    width: 10px;
+
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.slider li .yellow{
+    background-color: #ff6;
+    opacity: 1;
+    transition: 0.3s;
+}
+.slider li img{
+    transition: 0.3s;
+}
+.slider li:hover img{
+    opacity: 0.3;
+    transition: 0.3s;
+}
+.slider li:hover .more_btn,
+.slider li:hover .more_arrow{
+    opacity: 0;
+    transition: 0.3s;
+} 
+/* ----------------------------------------- */
+
+/* view_more部分 */
+.view_more_btn{
+    margin-top: 60px;
+    text-align: center;
+}
+.view_more_btn p{
+    display: inline-block;
+    line-height: 40px;
+    letter-spacing: 0.1em;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.view_more_btn a{
+    position: relative;
+}
+.view_more_btn a p{
+    position: relative;
+    z-index: 1;   
+}
+.btntransform{
+    transition: all 0.3s;
+    display: inline-block;
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+    margin-left: 7px;
+
+    position: absolute;
+    right: -15px;
+    /* z-index: 0; */
+    transition:.3s ease-out;
+}
+.view_more_btn a:hover .btntransform{
+    background-color: #ff6;
+    border-radius: 9999px;
+	width:277px;
+}
+.view_more_btn .about_service:hover .btntransform{
+    width:210px;   
+}
+.view_more_btn .double_check:hover .btntransform{
+    width:117px;   
+}
+.view_more_btn .about_lifeStyle:hover .btntransform{
+    width:303px;   
+}
+.about_lifeStyle .btntransform{
+    top: -16px;
+} 
+.inner_wrap5 .view_more_btn{
+    margin-left: -35px;
+}
+
+
+.view_more_btn img{
+    margin-left: 20px;
+    width: 12px;
+    vertical-align: revert;
+    transition: all 0.3s;
+}
+.view_more_btn a:hover p img{
+    margin-left: 2px;
+    transition: all 0.3s;
+}
+
+
+/* inner_wrap5 */
+.inner_wrap5{
+    padding-top: 240px;
+    font-size: 6.25px;
+    background-color: #fff;
+    position: relative;
+}
+.inner_wrap5 h2{
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    font-size: 12em;
+    text-align: center;
+    line-height: 75px;
+    font-family: 'Cabin', sans-serif;
+}
+.lifeStyle_content{
+    padding: 100px 0;
+    background: #eee;
+    margin-top: -40px;
+    padding: 100px 0;
+    height: 94vh;
+    
+    display: flex;
+    justify-content:right;
+    align-items: center;
+}
+.lifeStyle_contents_left{
+    width: 313px;
+    margin-right: 60px;
+}
+.lifeStyle_contents_left h3{
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    font-family: 'Noto Sans JP', sans-serif;
+    
+    margin-bottom: 40px;
+    
+}
+.lifeStyle_contents_left p{
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.lifeStyle_contents_right{
+    /* width: 844px; */
+    width: 60vw;
+}
+.lifestyle_innerBox .slick_margin{
+    margin-right: 20px;
+}
+.lifestyle_innerBox>p{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-bottom: 10px;
+}
+.lifestyle_innerBox>p span{
+    font-size: 1.9rem;
+    line-height: 2;
+    letter-spacing: 0.18em;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.lifeStyle_img{
+    margin-bottom: 20px;
+}
+.lifeStyle_commentBox p{
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.7rem;
+    line-height: 2;
+    font-weight: 500;
+}
+/* コメントの枠線css------------------------------------------- */
+.lifeStyle_commentBox {
+    position: relative;
+    display: block;
+    /* margin: 1.5em 0; */
+    padding: 10px 20px;
+    max-width: 700px;
+    background: #FFF;
+    border: solid 2px #ff6;
+  }
+  
+  .lifeStyle_commentBox:before {
+    content: "";
+    position: absolute;
+    bottom: -27px;
+    left: 83%;
+    margin-left: -15px;
+    border: 12px solid transparent;
+    /* border-top: 12px solid #FFF; */
+    border-top: 16px solid #FFF;
+    z-index: 2;
+  }
+  
+  .lifeStyle_commentBox:after {
+    content: "";
+    position: absolute;
+    bottom: -33px;
+    left: 83%;
+    margin-left: -17px;
+    border: 14px solid transparent;
+    /* border-top: 14px solid #ff6; */
+    border-top: 19px solid #ff6;
+    z-index: 1;
+  }
+  
+  .row2:before{
+    bottom: -27px;
+  }
+  .row2:after{
+        bottom: -33px;
+  }
+/* ------------------------------------------------ */
+/* lifestyle部分のスライダー */
+.lifeStyle_contents_right_inner .slick-list {
+    padding: 0 29% 0 0!important;
+    padding-right: 30px;
+  }
+
+
+/* inner_wrap6 */
+.inner_wrap6,
+.inner_wrap7,
+.inner_wrap8,
+.inner_wrap9{
+    padding-top: 240px;
+    font-size: 6.25px;
+    background-color: #fff;
+    position: relative;
+}
+.inner_wrap6 h2,
+.inner_wrap7 h2,
+.inner_wrap8 h2{
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    font-size: 12em;
+    text-align: center;
+    line-height: 75px;
+    font-family: 'Cabin', sans-serif;
+}
+.inner_wrap6 .title p,
+.inner_wrap7 .title p,
+.inner_wrap8 .title p{
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    text-align: center;
+    margin-bottom: 85px;
+}
+.inner_wrap6 .faq{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;/* 🌟 */
+}
+.faq_inner{
+    margin: 0 60px 20px 0;
+}
+.faq_inner:nth-child(2n){
+    margin: 0;
+}
+.faq_inner h3{
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #eee;
+    padding: 26px 20px 26px 70px;
+    display: inline-block;
+    width: 570px;
+    height: 122px;
+    
+    font-size: 1.7rem;
+    line-height: 2;
+    letter-spacing: 0.2em;
+    
+    transition: 0.3s;
+}
+.faq_inner .one_line{
+    height: 88px;
+}
+.faq_inner h3::before{
+    content: "Q";
+    position: absolute;
+    font-size: 1.8em;
+    left: 20px;
+    top: 15px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 300;
+}
+.faq_inner h3:hover{
+    background-color: #ff6;
+    transition: 0.3s;
+}
+.faq_inner h3 span{
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    display: block;
+    height: 11px;
+    width: 11px;
+    background:linear-gradient(135deg,transparent 0%,transparent 50%,#ff6 50%,#ff6 100%);   /* 右下の3角形 */
+}
+.faq_inner p{
+    width: 484.5px;
+    padding: 20px;
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+}
+/* アコーディオンの実装 */
+.contents {
+    display: none;
+}
+.menu-border{
+    background-color: #ff6;
+    outline: 1px solid #000;
+}
+
+/* inner_wrap7 */
+/* チェックリスト部分------------------------------------------ */
+.check_list{
+    padding-top: 20px;
+}
+.check_list ul{
+    display: flex;
+    justify-content: space-between;
+    width: 560px;
+}
+.check_list ul label{
+    height: 54px;
+    padding-left: 20px;
+    letter-spacing: 0.08em;
+    font-size: 1.7rem;
+    line-height: 2;
+    letter-spacing: 0.2em;
+}
+input[type="checkbox"]{
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+}
+input[type="checkbox"]::before,
+input[type="checkbox"]::after {
+    content: "";
+    display: block; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+input[type="checkbox"]::before {
+    background-color: #fff;
+    border-radius: 0%;
+    border: 1px solid #000;
+    width: 15px;/*チェックボックスの横幅*/
+    height: 15px;/*チェックボックスの縦幅*/
+    transform: translateY(-50%);
+    top: 50%;
+    left: 5px;
+}
+
+input[type="checkbox"]::after {
+    border-bottom: 2px solid #000;/*チェックの太さ*/
+    border-left: 2px solid #000;/*チェックの太さ*/
+    opacity: 0;/*チェック前は非表示*/
+    height: 6px;/*チェックの高さ*/
+    width: 11px;/*チェックの横幅*/
+    transform: rotate(-45deg);
+    top: -6px;/*チェック時の位置調整*/
+    left: -18px;/*チェック時の位置調整*/
+}
+input[type="checkbox"]:checked::after {
+    opacity: 1;/*チェック後表示*/
+}
+input[type="checkbox"]::before{
+    border: 1px solid #000;
+} 
+input[type="checkbox"]::before{
+    content: "";
+    border: 1px solid #000;
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: -20px;
+    bottom: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;  
+} 
+/* -------------------------------------------------------- */
+
+.inner_wrap7 span{
+    color: #f3345d;
+}
+.contact_form{
+    max-width: 800px;
+    margin: 0 auto;
+}
+.contact_form_inner{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+    
+}
+.form_item{
+    width: 30%;
+    
+    letter-spacing: 0.08em;
+    font-size: 1.7rem;
+    line-height: 60px;
+}
+.form_answer{
+    width: 70%;
+}
+.space{
+    display: flex;
+    justify-content: space-between;
+    
+    letter-spacing: 0.08em;
+    font-size: 1.4rem;                                                                
+    line-height: 60px;
+}
+.space .text_inner{
+    background-color: #eee;
+    width: 277.5px;
+    height: 60px;
+    padding: 20px;
+}
+.text_box{
+    background-color: #eee;
+    width: 70%;
+    padding: 20px;
+}
+.text_box .text_inner{
+    letter-spacing: 0.08em;
+    font-size: 1.4rem;                                                                
+}
+.text_area1 li:first-child{
+    background-color: #eee;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+.text_area1 li:last-child textarea{
+    background-color: #eee;
+    width: 100%;
+    padding: 20px;
+    height: 120px;
+}
+.text_area1 input,
+.text_area1 textarea{
+    letter-spacing: 0.08em;
+    font-size: 1.4rem;
+}
+
+.text_area2 .remarks{
+    background-color: #eee;
+    padding: 20px;
+    height: 120px;
+    width: 560px;
+    letter-spacing: 0.08em;
+    font-size: 1.4rem;
+}
+.first_form_inner p{
+    height: 54px;
+    line-height: 34px;
+    padding-top: 20px;
+    vertical-align: middle;
+
+}
+
+/* ボタン部分 */
+.inner_wrap7 .view_more_btn{
+    margin-top: 40px;
+}
+
+/* policy部分 */
+.policy{
+    overflow: auto;
+    border:1px solid #eee;
+    color:#000;
+    margin: 0 auto;
+    width: 798px;
+    height: 290px;
+    padding: 40px;
+    margin-top: 60px;
+}
+.policy h3,
+.policy h4{
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 20px 0 8px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+}
+.policy p{
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    
+}
+/* policyのスクロールバーの設定 */
+.policy::-webkit-scrollbar {
+    width: 8px;
+}
+.policy::-webkit-scrollbar-thumb {
+    background-color: #ff6;
+}
+.policy::-webkit-scrollbar-track {
+    background-color: #eee;
+}
+
+/* inner_wrap8部分 */
+.inner_wrap8{
+    padding: 240px 0 1px;
+    margin: 0 auto;
+}
+.inner_wrap8 .content{
+    padding: 0 0 150px;
+    margin-top: 80px;
+}
+.content ul{
+    display: flex;
+    justify-content: center;
+}
+.content li{
+    width: 280px;
+    height: 225px;
+    margin-right: 27px;
+}
+.content li:last-child{
+    margin-right: 0;
+}
+.content a{
+    color: #000;
+}
+.content a img{
+    border: 1px solid #eee;
+}
+.content a p{
+    margin-top: 20px;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    font-weight: normal;
+    font-family: 'Noto Sans JP', sans-serif;
+} 
+
+/* footer部分 */
+.inner_wrap9{
+    padding-top: 120px;
+    background-color: #eee;
+}
+footer{
+    position: relative;
+}
+footer h2{
+    width: 260px;
+    height: 90px;
+    margin: 0 auto 50px;
+    cursor: pointer;
+    
+}
+.info{
+    text-align: center;
+    margin-bottom: 100px;
+}
+.phone,
+.photoBook{
+    text-align: center;
+    display: inline-block;
+    line-height: 42px;
+}
+.phone a,
+.photoBook a{
+    color: #000;
+    cursor: pointer;
+}
+.phone{
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 0.08em;
+    font-size: 2.4rem;
+    line-height: 1.9;
+    letter-spacing: 0.09em;
+    padding: 0 30px;
+    
+}
+.photoBook{
+    padding: 10px 30px 6px;
+    border: 1px solid transparent; 
+    border-radius: 24px; 
+    transition: 0.3s;
+    
+    font-weight: 500;
+    font-size: 1.7rem;
+    line-height: 2;
+    letter-spacing: 0.2em;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.photoBook:hover{
+    transition: 0.3s;
+    background-color: #ff6;
+    border: 1px solid #000;
+    
+}
+.phone span svg,
+.photoBook span svg{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}
+footer nav{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    max-width: 878px;
+    padding: 0 40px;
+    margin: 0 auto;
+
+    margin-bottom: 70px;
+}
+.nav_menu{
+    width: 50%;
+    display: flex;
+    text-align: left;
+}
+.nav_menu ul:first-child{
+    margin: 0 20px 4px 0;
+}
+.nav_menu ul:last-child{
+}
+.nav_menu li{
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    margin-bottom: 4px;
+}
+.nav_menu li:hover{
+    transition: all 0.3s;
+    border: 1px solid #000;
+    background-color: #ff6;
+    
+}
+.nav_menu li a{
+    width: 123px;
+    height: 50px;
+    line-height: 30px;
+    padding: 10px 14px;
+    display: block;
+    
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: normal;
+}
+.footer_icon{
+    width: 50%;
+}
+.footer_icon p a{
+    border: 1px solid #000;
+    transition: all 0.3s;
+    
+    width: 400px;
+    height: 88px;
+    padding: 20px;
+    display: block;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Cabin', sans-serif;
+    font-size: 2.4rem;
+    line-height: 48px;
+    
+    transition: all 0.3s;
+    text-align: center;
+    letter-spacing: 0.15em;
+}
+.footer_icon p a:hover{
+    
+    background-color: #ff6;
+    transition: all 0.3s;
+}
+.footer_icon ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px 0;
+}
+.footer_icon ul li{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+.footer_icon ul li:hover{
+    border: 1px solid #000;
+    background-color: #ff6;
+    transition: 0.3s;
+
+}
+.footer_icon ul li a{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.footer_icon svg{
+    width: 20px;
+    height: 20px;
+}
+.copy{
+    text-align: center;
+    border-top: 1px solid #000;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 40px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* contactボタン部分 */
+.contact_btn{
+    cursor: pointer;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+    position: relative;
+}
+.contact_btn:hover{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    transition: 0.3s;
+    background-color: #ff6;
+}
+.contact_btn a{
+    display: flex;
+    align-items: center;
+}
+.contact_btn_outline{
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: 375px;
+}
+.contact_btn_outline .envelope_img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    
+}
+.contact_btn_text{
+    align-items: center;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+.contact_btn_text p{
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.9rem;
+    line-height: 2;
+    letter-spacing: 0.18em;
+    color: #000;
+    
+}
+.contact_btn_img{
+    width: 130px;
+    vertical-align: text-bottom;
+}
     
 }
 
