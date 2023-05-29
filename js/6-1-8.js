@@ -78,40 +78,40 @@
 		});
 		
 		// スクロールで窓の外の景色が変わる
-		window.onscroll = function(){  
-			var scrollTop = window.pageYOffset ;  //スクロール量を代入する
+		// window.onscroll = function(){  
+		// 	var scrollTop = window.pageYOffset ;  //スクロール量を代入する
 			
-			if (scrollTop < 730 ) {   //最上部に戻ってきた時
-				$(".sky1").css('opacity', '1')
-				$('.sky1').css('transition', '0.5s')
+		// 	if (scrollTop < 730 ) {   //最上部に戻ってきた時
+		// 		$(".sky1").css('opacity', '1')
+		// 		$('.sky1').css('transition', '0.5s')
 				
-		  $(".sky2").css('opacity', '0')
-		  $('.sky2').css('transition', '0.5s')
+		//   $(".sky2").css('opacity', '0')
+		//   $('.sky2').css('transition', '0.5s')
 		  
-		  $(".sky3").css('opacity', '0')
-		  $('.sky3').css('transition', '0.5s')
-		}
-		if (scrollTop > 900 ) {   //１０pxスクロールした時
-			$(".sky1").css('opacity', '0')
-			$('.sky1').css('transition', '0.5s')
+		//   $(".sky3").css('opacity', '0')
+		//   $('.sky3').css('transition', '0.5s')
+		// }
+		// if (scrollTop > 900 ) {   //１０pxスクロールした時
+		// 	$(".sky1").css('opacity', '0')
+		// 	$('.sky1').css('transition', '0.5s')
 			
-			$(".sky2").css('opacity', '1')
-			$('.sky2').css('transition', '0.5s')
+		// 	$(".sky2").css('opacity', '1')
+		// 	$('.sky2').css('transition', '0.5s')
 			
-			$(".sky3").css('opacity', '0')
-			$('.sky3').css('transition', '0.5s')
-		}
-		if (scrollTop > 1100 ) {   //20pxスクロールした時
-			$(".sky1").css('opacity', '0')
-			$('.sky1').css('transition', '0.5s')
+		// 	$(".sky3").css('opacity', '0')
+		// 	$('.sky3').css('transition', '0.5s')
+		// }
+		// if (scrollTop > 1100 ) {   //20pxスクロールした時
+		// 	$(".sky1").css('opacity', '0')
+		// 	$('.sky1').css('transition', '0.5s')
 			
-			$(".sky2").css('opacity', '0')
-			$('.sky2').css('transition', '0.5s')
+		// 	$(".sky2").css('opacity', '0')
+		// 	$('.sky2').css('transition', '0.5s')
 			
-			$(".sky3").css('opacity', '1')
-			$('.sky3').css('transition', '0.5s')
-		}
-		};
+		// 	$(".sky3").css('opacity', '1')
+		// 	$('.sky3').css('transition', '0.5s')
+		// }
+		// };
 		
 		
 		// 猫部分スクロール
