@@ -299,8 +299,8 @@ html, body{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    right: 20px;
-    top: 20px;
+    right: 0;
+    top: 0;
     position: absolute;
 }
 .openbtn{
@@ -1740,6 +1740,9 @@ html, body{
 }
 
 /* 資料請求部分 */
+.menu_for_sp{
+    position: relative;
+}
 .doc_req_outline{
     /* border: 1px solid #000; */
     /* width: 40px;
@@ -1760,6 +1763,7 @@ html, body{
     position: absolute;
     top: 25%;
     right: 0;
+    
 }
 .envelope_img{
     /* width: 15px;
