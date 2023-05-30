@@ -356,6 +356,7 @@ html, body{
     height: 543px;
     justify-content: space-between;
     writing-mode: vertical-rl;
+    z-index: 999;
 }
 .header_nav li{
     margin: 5px 0;
@@ -486,7 +487,7 @@ html, body{
 .inner_wrap2{
     padding-top: 240px;
     background-color: #fff;
-    z-index: 50;
+    /* z-index: 50; */
 }
 .inner_wrap2 .logo_img2{
     width: 260px;
@@ -530,11 +531,14 @@ html, body{
  }
  /* --------------------------------------------- */
 .inner_wrap2 .text{
+    /* position: relative; */
+    /* z-index: 999; */
     max-width: 1380px;
     padding: 0 150px;
     display: flex;
     justify-content: space-between;
-    margin: 798px auto 96px;
+    margin: 0 auto 96px;
+    margin-top: 798px;        /* ここ */
     align-items: center;
 }
 .inner_wrap2 .text p:first-child{
@@ -600,7 +604,6 @@ html, body{
 .wrap3_slider .slider_title{
     max-width: 91px;
 }
-.slider_title_inner{}
 .wrap3_slider .slider_title  .num{
     text-align: center;
     color: #ff6;
@@ -929,7 +932,7 @@ html, body{
     font-size: 1.4rem;
     line-height: 2;
     letter-spacing: 0.15em;
-    font-weight: 500;
+    font-weight: 400;
     font-family: 'Noto Sans JP', sans-serif;
 }
 .lifeStyle_contents_right{
@@ -1425,8 +1428,6 @@ footer nav{
 .nav_menu ul:first-child{
     margin: 0 20px 4px 0;
 }
-.nav_menu ul:last-child{
-}
 .nav_menu li{
     transition: all 0.3s;
     border: 1px solid transparent;
@@ -1533,6 +1534,7 @@ footer nav{
 }
 .contact_btn a{
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 .contact_btn_outline{
@@ -1540,20 +1542,20 @@ footer nav{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    position: absolute;
-    left: 375px;
+    position: relative;
+    margin-right: 120px;
+    /* position: absolute;
+    left: 375px; */
 }
 .contact_btn_outline .envelope_img{
     position: absolute;
     top: 50%;
     left: 50%;
     transform:translate(-50%,-50%);
-    
 }
 .contact_btn_text{
     align-items: center;
     padding: 40px 0;
-    margin: 0 auto;
 }
 .contact_btn_text p{
     font-weight: 500;
@@ -1965,20 +1967,20 @@ html, body{
     /* text-align: center; */
     font-size: 30px;
     line-height: 34px;
-    font-weight: bold;
-    font-family: 'Cabin', sans-serif;
-    letter-spacing: 0.2em;
-    color: #fff;
+    /* font-weight: bold; */
+    /* font-family: 'Cabin', sans-serif; */
+    /* letter-spacing: 0.2em; */
+    /* color: #fff; */
     text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000; */
 }
 .inner_wrap2 .title{
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 .inner_wrap2 #slideshow{
-    width: 100%;
+    /* width: 100%; */
 }
 /* スライドショーの設定----------------------------- */
-#slideshow {
+/* #slideshow {
     position: relative;
 }
 #slideshow img {
@@ -1995,237 +1997,245 @@ html, body{
  }
  #slideshow img.last-active {
     z-index: 9;
- }
+ } */
  /* --------------------------------------------- */
 .inner_wrap2 .text{
-    max-width: 1380px;
-    padding: 0 150px;
-    display: flex;
-    justify-content: space-between;
-    margin: 798px auto 96px;
-    align-items: center;
+    /* max-width: 1380px; */
+    padding: 0 40px;
+    display: block;
+
+    margin: 30px auto 60px;
+    margin-top: 798px;  /* ここ */
+    /* align-items: center; */
 }
 .inner_wrap2 .text p:first-child{
-    width: 38%;
-    padding-right: 10px;
-    font-weight: 500;
-    font-size: 2.8rem;
-    line-height: 1.8;
-    letter-spacing: 0.12em;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-feature-settings: "palt";
+    text-align: center;
+    width: 100%;
+    padding-right: 0;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+
+    /* font-weight: 500; */
+    /* line-height: 1.8; */
+    /* letter-spacing: 0.12em; */
+    /* font-family: 'Noto Sans JP', sans-serif; */
+    /* font-feature-settings: "palt"; */
+}
+.text_br{
+    display: none;
 }
 .inner_wrap2 .text p:last-child{
-    width: calc(1080px - 38%);
+    width: 100%;
+
     line-height: 2.2em;
-    font-size: 1.4rem;
-    letter-spacing: 0.15em;
-    
-    font-family: 'Noto Sans JP', sans-serif;
-    font-feature-settings: "palt"                    /* 「」や句読点などの、文字の左づめ */
+    /* font-size: 1.4rem; */
+    /* letter-spacing: 0.15em; */
+    /* font-family: 'Noto Sans JP', sans-serif; */
 }
 
 /* inner_wrap3 */
 .inner_wrap3{
-    padding-top: 200px;
+    /* padding: 150px 40px 0;
     background-color: #fff;
+    margin: 0 21.5px; */
 }
 .inner_wrap3 .title{
-    display: flex;
-    margin: 0 auto;
+    /* display: flex;
+    margin: 0 auto; */
 }
 .inner_wrap3 .logo_img2{
-    width: 260px;
+    /* width: 260px;
     margin-right: 10px;
-    vertical-align: text-bottom;
+    vertical-align: text-bottom; */
 }
 .inner_wrap3 h2{
-    font-family: 'Noto Sans JP', sans-serif;
+    /* font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500;
     font-size: 2.8rem;
     line-height: 1.8;
     letter-spacing: 0.25em;
-    margin: 0 auto;
+    margin: 0 auto; */
 }
 .inner_wrap3 h2 span{
-    color: #fff;
+    /* color: #fff;
     font-size: 2.7em;
     text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
     vertical-align: -3%;
     font-family: 'Cabin', sans-serif;
-    font-weight: bold;
+    font-weight: bold; */
 }
 .inner_wrap3_slider{
-    height: auto;
+    /* height: auto;
     width: 680px;
-    margin: 0 auto;
+    margin: 0 auto; */
 }
 .wrap3_slider_inner{
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    margin-top: 55px;
+    margin-top: 55px; */
 }
 .wrap3_slider .slider_title{
-    max-width: 91px;
+    /* max-width: 91px; */
 }
 .slider_title_inner{}
 .wrap3_slider .slider_title  .num{
-    text-align: center;
+    /* text-align: center;
     color: #ff6;
     font-size: 16em;
     text-align: center;
     display: block;
     margin: auto;
     font-weight: 700;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Cabin', sans-serif; */
 }
 .slider_title p:last-child{
-    margin: -64px auto 0;
+    /* margin: -64px auto 0;
     font-family: "リュウミン R-KL", "Noto Serif JP","游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro";
     font-size: 2.4rem;
     line-height: 1.9;
     letter-spacing: 0.09em;
-    writing-mode: vertical-rl;
+    writing-mode: vertical-rl; */
 }
 .slider_illust{
-    max-width: 500px;
+    /* max-width: 500px;
     margin: 0 24.5px;
-    margin-top: 74px;
+    margin-top: 74px; */
 }
 
 /*矢印の設定*/
 .slick-prev{
-    opacity: 0;
+    /* opacity: 0; */
 }
 .slick-arrow {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-    cursor: pointer;
+    cursor: pointer; */
   }
   .slick-next {
-    width: 60px;
+    /* width: 60px;
     height: auto;
     right: 0px;
-    transition: 0.3s;
+    transition: 0.3s; */
 }
 .slick-next:hover{
-    right: -20px;
-    transition: 0.3s;
+    /* right: -20px;
+    transition: 0.3s; */
   }
 
 /*ドットナビゲーションの設定*/
     .inner_wrap3_dots{
-        display: flex;
+        /* display: flex;
         justify-content: center;
-        margin-top: -22px;
+        margin-top: -22px; */
     }
     .inner_wrap3_dots li{
-        position: relative;
+        /* position: relative;
 
         height: 30px;
         width: 30px;
         border-radius: 50%;
-        margin: 0 5px;
+        margin: 0 5px; */
     }
     .inner_wrap3_dots button{
-        font-family: 'Cabin', sans-serif;
+        /* font-family: 'Cabin', sans-serif;
         font-size: 1.3rem;
         letter-spacing: 0.15em;
         font-weight: 500;
         
         position: absolute;
         right: 8px;
-        top: 5px;
+        top: 5px; */
     }
     .inner_wrap3_dots .slick-active{
-        border: 1px solid #000;
-        background-color: #ff6;/*ドットボタンの現在地表示の色*/
+        /* border: 1px solid #000;
+        background-color: #ff6; */
     }
     
     /* inner_wrap4 */
     .inner_wrap4{
-        padding-top: 240px;
-        background: #fff;
-        font-size: 6.25px;
+        padding-top: 150px;
+        /* background: #fff; */
+        /* font-size: 6.25px; */
     }
     .inner_wrap4 .title{
-        margin-bottom: 80px;
+        /* margin-bottom: 80px; */
     }
     .inner_wrap4 h2{
-    letter-spacing: 0.2em;
+    /* letter-spacing: 0.2em;
     color: #fff;
     text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
     font-size: 12em;
     text-align: center;
     line-height: 75px;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Cabin', sans-serif; */
 }
 .inner_wrap4 .title p{
-    font-family: 'Noto Sans JP', sans-serif;
-    letter-spacing: 0.2em;
+    font-size: 2.2rem;
+
+    /* font-family: 'Noto Sans JP', sans-serif; */
+    /* letter-spacing: 0.2em;
     font-weight: 500;
-    font-size: 2.4rem;
     line-height: 1.9;
-    text-align: center;
+    text-align: center; */
 }
 /* タイトル部分の装飾--------------------------- */
 .text-divider{
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
 }
 .text-divider::before,.text-divider::after {
-    content: '';
+    /* content: '';
     height: 1px;
     background-color: #333;
-    flex-grow: 1;
+    flex-grow: 1; */
 }
 .text-divider::before {
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
 .text-divider::after {
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 /* ----------------------------------------- */
 /* 8枚の画像のスライド----------------------- */
 .works_slider{
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
 }
 .works_slider li a{
-    font-family: 'Noto Sans JP', sans-serif;
+    /* font-family: 'Noto Sans JP', sans-serif;
     color: #000;
     font-size: 1.7rem;
     line-height: 2;
     letter-spacing: 0.2em;
     font-weight: 500;
-    font-feature-settings: "palt"
+    font-feature-settings: "palt" */
 }
 .works_slider li a img{
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 .works_slider li a span{
-    display: block;
+    /* display: block;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.4rem;
     line-height: 2;
     letter-spacing: 0.15em;
-    font-weight: normal;
+    font-weight: normal; */
 }
 /*　スライダーのためのcss　*/
 .slider li .yellow {
-    max-width:327px;/*スライダー内の画像を横幅100%に*/
-    max-height: 496px;;
+    /* max-width:327px; *//*スライダー内の画像を横幅100%に*/
+    /* max-height: 496px; */
 }
 .slider .slick-slide {
-    margin-right: 40px;/*スライド左右の余白調整*/
+    /* margin-right: 40px; *//*スライド左右の余白調整*/
 }
 /*　画像が黄色くhoverする実装　*/
 .slider li a{
-    position: relative;
+    /* position: relative; */
 }
 .more_btn {
-    position: absolute;
+    /* position: absolute;
     top: 0;
     right: 0px;
 
@@ -2235,10 +2245,10 @@ html, body{
     width: 0;
 
     opacity: 1;
-    transition: 0.3s;
+    transition: 0.3s; */
   }
   .more_btn p{
-    z-index: 10;
+    /* z-index: 10;
     position: absolute;
     transform: rotate(45deg);
     right: -63px;
@@ -2249,62 +2259,62 @@ html, body{
     font-family: 'Cabin', sans-serif;
 
     opacity: 1;
-    transition: 0.3s;
+    transition: 0.3s; */
 }
 .more_arrow{
-    position: absolute;
+    /* position: absolute;
     top: 10px;
     right: 10px;
     width: 10px;
     width: 10px;
 
     opacity: 1;
-    transition: 0.3s;
+    transition: 0.3s; */
 }
 
 .slider li .yellow{
-    background-color: #ff6;
+    /* background-color: #ff6;
     opacity: 1;
-    transition: 0.3s;
+    transition: 0.3s; */
 }
 .slider li img{
-    transition: 0.3s;
+    /* transition: 0.3s; */
 }
 .slider li:hover img{
-    opacity: 0.3;
-    transition: 0.3s;
+    /* opacity: 0.3;
+    transition: 0.3s; */
 }
 .slider li:hover .more_btn,
 .slider li:hover .more_arrow{
-    opacity: 0;
-    transition: 0.3s;
+    /* opacity: 0;
+    transition: 0.3s; */
 } 
 /* ----------------------------------------- */
 
 /* view_more部分 */
 .view_more_btn{
-    margin-top: 60px;
-    text-align: center;
+    /* margin-top: 60px;
+    text-align: center; */
 }
 .view_more_btn p{
-    display: inline-block;
+    /* display: inline-block;
     line-height: 40px;
     letter-spacing: 0.1em;
     color: #000;
     cursor: pointer;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 500; */
 }
 .view_more_btn a{
-    position: relative;
+    /* position: relative; */
 }
 .view_more_btn a p{
-    position: relative;
-    z-index: 1;   
+    /* position: relative;
+    z-index: 1;    */
 }
 .btntransform{
-    transition: all 0.3s;
+    /* transition: all 0.3s;
     display: inline-block;
     border: 1px solid #000;
     width: 40px;
@@ -2315,94 +2325,99 @@ html, body{
 
     position: absolute;
     right: -15px;
-    /* z-index: 0; */
-    transition:.3s ease-out;
+    transition:.3s ease-out; */
 }
 .view_more_btn a:hover .btntransform{
-    background-color: #ff6;
+    /* background-color: #ff6;
     border-radius: 9999px;
-	width:277px;
+	width:277px; */
 }
 .view_more_btn .about_service:hover .btntransform{
-    width:210px;   
+    /* width:210px;    */
 }
 .view_more_btn .double_check:hover .btntransform{
-    width:117px;   
+    /* width:117px;    */
 }
 .view_more_btn .about_lifeStyle:hover .btntransform{
-    width:303px;   
+    /* width:303px;    */
 }
 .about_lifeStyle .btntransform{
-    top: -16px;
+    /* top: -16px; */
 } 
 .inner_wrap5 .view_more_btn{
-    margin-left: -35px;
+    /* margin-left: -35px; */
 }
 
 
 .view_more_btn img{
-    margin-left: 20px;
+    /* margin-left: 20px;
     width: 12px;
     vertical-align: revert;
-    transition: all 0.3s;
+    transition: all 0.3s; */
 }
 .view_more_btn a:hover p img{
-    margin-left: 2px;
-    transition: all 0.3s;
+    /* margin-left: 2px;
+    transition: all 0.3s; */
 }
 
 
 /* inner_wrap5 */
 .inner_wrap5{
-    padding-top: 240px;
-    font-size: 6.25px;
-    background-color: #fff;
-    position: relative;
+    padding-top: 200px;
+
+    /* font-size: 6.25px; */
+    /* background-color: #fff; */
+    /* position: relative; */
 }
 .inner_wrap5 h2{
-    letter-spacing: 0.2em;
-    color: #fff;
-    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
-    font-size: 12em;
-    text-align: center;
-    line-height: 75px;
-    font-family: 'Cabin', sans-serif;
+    /* letter-spacing: 0.2em; */
+    /* color: #fff; */
+    /* text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000; */
+    /* font-size: 12em; */
+    /* text-align: center; */
+    /* line-height: 75px; */
+    /* font-family: 'Cabin', sans-serif; */
 }
 .lifeStyle_content{
-    padding: 100px 0;
-    background: #eee;
-    margin-top: -40px;
-    padding: 100px 0;
-    height: 94vh;
+    display: block;
+    justify-content:center;
+    padding: 40px 0;
     
-    display: flex;
-    justify-content:right;
-    align-items: center;
+    
+    /* align-items: center; */
+    /* background: #eee; */
+    /* margin-top: -40px; */
+    height: 94vh;
 }
 .lifeStyle_contents_left{
-    width: 313px;
-    margin-right: 60px;
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
 }
 .lifeStyle_contents_left h3{
-    letter-spacing: 0.2em;
+    font-size: 2.2rem;
+
+    /* letter-spacing: 0.2em;
     font-weight: 500;
-    font-size: 2.4rem;
     line-height: 1.9;
-    font-family: 'Noto Sans JP', sans-serif;
-    
-    margin-bottom: 40px;
-    
+    font-family: 'Noto Sans JP', sans-serif; */
+    /* margin-bottom: 40px; */
 }
 .lifeStyle_contents_left p{
     font-size: 1.4rem;
     line-height: 2;
     letter-spacing: 0.15em;
-    font-weight: 500;
+    font-weight: 400;
     font-family: 'Noto Sans JP', sans-serif;
+}
+.lifeStyle_contents_left>p{
+    border-bottom: 1px solid #000;
+    margin: 0 30px;
+    padding-bottom: 40px;
 }
 .lifeStyle_contents_right{
     /* width: 844px; */
-    width: 60vw;
+    width: 100vw;
 }
 .lifestyle_innerBox .slick_margin{
     margin-right: 20px;
@@ -2483,9 +2498,9 @@ html, body{
 .inner_wrap7,
 .inner_wrap8,
 .inner_wrap9{
-    padding-top: 240px;
+    padding-top: 150px;  /* OK */
     font-size: 6.25px;
-    background-color: #fff;
+    /* background-color: #fff; */
     position: relative;
 }
 .inner_wrap6 h2,
@@ -2497,42 +2512,44 @@ html, body{
     font-size: 12em;
     text-align: center;
     line-height: 75px;
-    font-family: 'Cabin', sans-serif;
+    /* font-family: 'Cabin', sans-serif; */
 }
 .inner_wrap6 .title p,
 .inner_wrap7 .title p,
 .inner_wrap8 .title p{
-    font-family: 'Noto Sans JP', sans-serif;
+    /* font-family: 'Noto Sans JP', sans-serif; */
     letter-spacing: 0.2em;
     font-weight: 500;
-    font-size: 2.4rem;
+    font-size: 2.2rem; /* OK */
     line-height: 1.9;
     text-align: center;
-    margin-bottom: 85px;
+    margin-bottom: 40px; /* OK */
 }
 .inner_wrap6 .faq{
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    padding: 0 40px;/* OK */
+    margin: 0;
+    display: block;
+    /* justify-content: center; */
+    /* flex-wrap: wrap; */
     max-width: 1200px;/* 🌟 */
 }
 .faq_inner{
-    margin: 0 60px 20px 0;
+    margin: 0;
 }
 .faq_inner:nth-child(2n){
     margin: 0;
 }
 .faq_inner h3{
     position: relative;
-    cursor: pointer;
-    border: 1px solid #eee;
-    padding: 26px 20px 26px 70px;
+    /* cursor: pointer; */
+    /* border: 1px solid #eee; */
+    /* padding: 26px 20px 26px 70px; */
     display: inline-block;
-    width: 570px;
-    height: 122px;
+    width: 100%;/* OK */
+    margin-bottom: 20px;/* OK */
+    font-size: 1.6rem;/* OK */
+    height: 88px;/* OK */
     
-    font-size: 1.7rem;
     line-height: 2;
     letter-spacing: 0.2em;
     
@@ -2654,7 +2671,7 @@ input[type="checkbox"]::before{
 /* -------------------------------------------------------- */
 
 .inner_wrap7 span{
-    color: #f3345d;
+    /* color: #f3345d; */
 }
 .contact_form{
     max-width: 800px;
@@ -2987,54 +3004,53 @@ footer nav{
 
 /* contactボタン部分 */
 .contact_btn{
-    cursor: pointer;
+    /* cursor: pointer;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     transition: 0.3s;
-    position: relative;
+    position: relative; */
 }
 .contact_btn:hover{
-    border-top: 1px solid #000;
+    /* border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     transition: 0.3s;
-    background-color: #ff6;
+    background-color: #ff6; */
 }
 .contact_btn a{
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
 }
 .contact_btn_outline{
-    border: 1px solid #000;
+    /* border: 1px solid #000;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     position: absolute;
-    left: 375px;
+    left: 375px; */
 }
 .contact_btn_outline .envelope_img{
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%); */
     
 }
 .contact_btn_text{
-    align-items: center;
+    /* align-items: center;
     padding: 40px 0;
-    margin: 0 auto;
+    margin: 0 auto; */
 }
 .contact_btn_text p{
-    font-weight: 500;
+    /* font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.9rem;
     line-height: 2;
     letter-spacing: 0.18em;
-    color: #000;
-    
+    color: #000; */
 }
 .contact_btn_img{
-    width: 130px;
-    vertical-align: text-bottom;
+    /* width: 130px;
+    vertical-align: text-bottom; */
 }
     
 }
