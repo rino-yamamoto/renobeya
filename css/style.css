@@ -1047,13 +1047,16 @@ html, body{
 }
 .inner_wrap6 .faq{
     margin: 0 auto;
+    /* padding: 0 200px; */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1200px;/* 🌟 */
+    max-width: 1200px;
+    /* width: 80%; */
 }
 .faq_inner{
-    margin: 0 60px 20px 0;
+    /* margin: 0 60px 20px 0; */
+    width: 100%;
 }
 .faq_inner:nth-child(2n){
     margin: 0;
@@ -1064,7 +1067,7 @@ html, body{
     border: 1px solid #eee;
     padding: 26px 20px 26px 70px;
     display: inline-block;
-    width: 570px;
+    width: calc((100% / 2) - 20px);
     height: 122px;
     
     font-size: 1.7rem;
@@ -1099,6 +1102,7 @@ html, body{
     background:linear-gradient(135deg,transparent 0%,transparent 50%,#ff6 50%,#ff6 100%);   /* 右下の3角形 */
 }
 .faq_inner p{
+    width: calc((100% / 2) - 20px);
     width: 484.5px;
     padding: 20px;
     font-size: 1.4rem;
@@ -1118,11 +1122,12 @@ html, body{
 /* チェックリスト部分------------------------------------------ */
 .check_list{
     padding-top: 20px;
+    width: 70%;
 }
 .check_list ul{
     display: flex;
     justify-content: space-between;
-    width: 560px;
+    /* width: 560px; */
 }
 .check_list ul label{
     height: 54px;
@@ -1216,14 +1221,20 @@ input[type="checkbox"]::before{
     justify-content: space-between;
     
     letter-spacing: 0.08em;
-    font-size: 1.4rem;                                                                
+    font-size: 1.4rem;
     line-height: 60px;
+    width: 100%;
+}
+.space li{
+    background-color: #eee;
+    width: calc((100% / 2) - 3px);
+    height: 60px;
 }
 .space .text_inner{
-    background-color: #eee;
-    width: 277.5px;
-    height: 60px;
     padding: 20px;
+    line-height: 1;
+    width: 100%;
+    outline: none;
 }
 .text_box{
     background-color: #eee;
@@ -1233,6 +1244,8 @@ input[type="checkbox"]::before{
 .text_box .text_inner{
     letter-spacing: 0.08em;
     font-size: 1.4rem;                                                                
+    width: 100%;
+    outline: none;
 }
 .text_area1 li:first-child{
     background-color: #eee;
@@ -1249,22 +1262,31 @@ input[type="checkbox"]::before{
 .text_area1 textarea{
     letter-spacing: 0.08em;
     font-size: 1.4rem;
+    width: 100%;
+    outline: none;
 }
 
-.text_area2 .remarks{
+.contact_form_inner .text_area2{
     background-color: #eee;
+    width: 70%;
+
+}
+.contact_form_inner .text_area2 .remarks{
     padding: 20px;
     height: 120px;
-    width: 560px;
+    /* width: 560px; */
     letter-spacing: 0.08em;
     font-size: 1.4rem;
+    width: 100%;
+    outline: none;
 }
+
+
 .first_form_inner p{
     height: 54px;
     line-height: 34px;
     padding-top: 20px;
     vertical-align: middle;
-
 }
 
 /* ボタン部分 */
@@ -1278,7 +1300,7 @@ input[type="checkbox"]::before{
     border:1px solid #eee;
     color:#000;
     margin: 0 auto;
-    width: 798px;
+    /* width: 798px; */
     height: 290px;
     padding: 40px;
     margin-top: 60px;
@@ -1316,7 +1338,7 @@ input[type="checkbox"]::before{
 }
 .inner_wrap8 .content{
     padding: 0 0 150px;
-    margin-top: 80px;
+    margin: 80px 200px 0;
 }
 .content ul{
     display: flex;
@@ -1749,13 +1771,19 @@ html, body{
 .menu_for_sp{
     position: relative;
 }
+.doc_req{
+    position: absolute;
+    top: 25%;
+    right: 0;
+}
 .doc_req_outline{
     /* border: 1px solid #000; */
     /* width: 40px;
     height: 40px;
     border-radius: 50%;
     transition: 0.3s; */
-    /* position: relative; */
+    position: absolute;
+    right: 50px;
 }
 .doc_req .doc_req_outline:hover{
     /* background-color: #ff6;
@@ -1764,11 +1792,6 @@ html, body{
 .doc_req_outline a{
     /* display: block; */
     /* padding: 9px 0 0 12px; */
-}
-.doc_req{
-    position: absolute;
-    top: 25%;
-    right: 0;
 }
 .envelope_img{
     /* width: 15px;
@@ -2407,8 +2430,8 @@ html, body{
     font-size: 1.4rem;
     line-height: 2;
     letter-spacing: 0.15em;
-    font-weight: 400;
-    font-family: 'Noto Sans JP', sans-serif;
+    /* font-weight: 400; */
+    /* font-family: 'Noto Sans JP', sans-serif; */
 }
 .lifeStyle_contents_left>p{
     border-bottom: 1px solid #000;
@@ -2492,7 +2515,6 @@ html, body{
     padding-right: 30px;
   }
 
-
 /* inner_wrap6 */
 .inner_wrap6,
 .inner_wrap7,
@@ -2518,20 +2540,20 @@ html, body{
 .inner_wrap7 .title p,
 .inner_wrap8 .title p{
     /* font-family: 'Noto Sans JP', sans-serif; */
-    letter-spacing: 0.2em;
-    font-weight: 500;
-    font-size: 2.2rem; /* OK */
-    line-height: 1.9;
-    text-align: center;
-    margin-bottom: 40px; /* OK */
+    /* letter-spacing: 0.2em;
+    font-weight: 500; */
+    font-size: 2.2rem;
+    /* line-height: 1.9; */
+    /* text-align: center; */
+    margin-bottom: 40px;
 }
 .inner_wrap6 .faq{
     padding: 0 40px;/* OK */
-    margin: 0;
+    /* margin: 0; */
     display: block;
     /* justify-content: center; */
     /* flex-wrap: wrap; */
-    max-width: 1200px;/* 🌟 */
+    max-width: 1200px;
 }
 .faq_inner{
     margin: 0;
@@ -2604,7 +2626,6 @@ html, body{
 .check_list ul{
     display: flex;
     justify-content: space-between;
-    width: 560px;
 }
 .check_list ul label{
     height: 54px;
@@ -2675,237 +2696,248 @@ input[type="checkbox"]::before{
 }
 .contact_form{
     max-width: 800px;
-    margin: 0 auto;
+    padding: 0 40px;
+    /* margin: 0 40px; */
+    /* margin: 0 auto; */
 }
 .contact_form_inner{
-    display: flex;
+    /* display: flex;
     justify-content: flex-start;
-    padding-top: 20px;
+    padding-top: 20px; */
     
 }
 .form_item{
-    width: 30%;
+    /* width: 30%;
     
     letter-spacing: 0.08em;
     font-size: 1.7rem;
-    line-height: 60px;
+    line-height: 60px; */
 }
 .form_answer{
-    width: 70%;
+    /* width: 70%; */
 }
 .space{
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     
     letter-spacing: 0.08em;
-    font-size: 1.4rem;                                                                
+    font-size: 1.4rem;
     line-height: 60px;
+    width: 100%; */
+}
+.space li{
+    /* background-color: #eee;
+    width: calc((100% / 2) - 3px);
+    height: 60px; */
 }
 .space .text_inner{
-    background-color: #eee;
-    width: 277.5px;
-    height: 60px;
-    padding: 20px;
+    /* padding: 20px;
+    line-height: 1; */
 }
 .text_box{
-    background-color: #eee;
+    /* background-color: #eee;
     width: 70%;
-    padding: 20px;
+    padding: 20px; */
 }
 .text_box .text_inner{
-    letter-spacing: 0.08em;
-    font-size: 1.4rem;                                                                
+    /* letter-spacing: 0.08em;
+    font-size: 1.4rem;                                                                 */
 }
 .text_area1 li:first-child{
-    background-color: #eee;
+    /* background-color: #eee;
     margin-bottom: 10px;
-    padding: 20px;
+    padding: 20px; */
 }
 .text_area1 li:last-child textarea{
-    background-color: #eee;
+    /* background-color: #eee;
     width: 100%;
     padding: 20px;
-    height: 120px;
+    height: 120px; */
 }
 .text_area1 input,
 .text_area1 textarea{
-    letter-spacing: 0.08em;
-    font-size: 1.4rem;
+    /* letter-spacing: 0.08em;
+    font-size: 1.4rem; */
 }
 
 .text_area2 .remarks{
-    background-color: #eee;
+    /* background-color: #eee;
     padding: 20px;
     height: 120px;
     width: 560px;
     letter-spacing: 0.08em;
-    font-size: 1.4rem;
+    font-size: 1.4rem; */
 }
 .first_form_inner p{
-    height: 54px;
+    /* height: 54px;
     line-height: 34px;
     padding-top: 20px;
-    vertical-align: middle;
+    vertical-align: middle; */
 
 }
 
 /* ボタン部分 */
 .inner_wrap7 .view_more_btn{
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 
 /* policy部分 */
 .policy{
-    overflow: auto;
+    /* overflow: auto;
     border:1px solid #eee;
     color:#000;
-    margin: 0 auto;
-    width: 798px;
-    height: 290px;
+    margin: 0 auto; */
+    /* width: 798px; */
+    /* height: 290px;
     padding: 40px;
-    margin-top: 60px;
+    margin-top: 60px; */
 }
 .policy h3,
 .policy h4{
-    font-family: 'Noto Sans JP', sans-serif;
+    /* font-family: 'Noto Sans JP', sans-serif;
     margin: 20px 0 8px;
     font-weight: bold;
     font-size: 1.4rem;
     line-height: 2;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.15em; */
 }
 .policy p{
-    font-size: 1.4rem;
+    /* font-size: 1.4rem;
     line-height: 2;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.15em; */
     
 }
 /* policyのスクロールバーの設定 */
 .policy::-webkit-scrollbar {
-    width: 8px;
+    /* width: 8px; */
 }
 .policy::-webkit-scrollbar-thumb {
-    background-color: #ff6;
+    /* background-color: #ff6; */
 }
 .policy::-webkit-scrollbar-track {
-    background-color: #eee;
+    /* background-color: #eee; */
 }
 
 /* inner_wrap8部分 */
 .inner_wrap8{
-    padding: 240px 0 1px;
-    margin: 0 auto;
+    padding: 150px 0 0;
+    /* margin: 0 auto; */
 }
 .inner_wrap8 .content{
-    padding: 0 0 150px;
-    margin-top: 80px;
+    padding: 0 0 130px;
+    margin: 80px 40px 0;
 }
 .content ul{
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .content li{
-    width: 280px;
-    height: 225px;
-    margin-right: 27px;
+    /* width: 280px; */
+    width: calc((100% / 2) - 15px);
+    height: auto;
+    margin-right: 0;
 }
 .content li:last-child{
     margin-right: 0;
 }
 .content a{
-    color: #000;
+    /* color: #000; */
 }
 .content a img{
-    border: 1px solid #eee;
+    /* border: 1px solid #eee; */
 }
 .content a p{
-    margin-top: 20px;
-    padding: 0 10px;
-    font-size: 1.4rem;
-    line-height: 2;
-    letter-spacing: 0.15em;
-    font-weight: normal;
-    font-family: 'Noto Sans JP', sans-serif;
+    margin-top: 10px;
+    /* padding: 0 10px; */
+    padding-bottom: 20px;
+    font-size: 1.3rem;
+    /* line-height: 2; */
+    /* letter-spacing: 0.15em; */
+    /* font-weight: normal; */
+    /* font-family: 'Noto Sans JP', sans-serif; */
 } 
 
 /* footer部分 */
 .inner_wrap9{
-    padding-top: 120px;
-    background-color: #eee;
+    padding-top: 100px;
+    /* background-color: #eee; */
 }
 footer{
-    position: relative;
+    /* position: relative; */
 }
 footer h2{
-    width: 260px;
+    /* width: 260px;
     height: 90px;
     margin: 0 auto 50px;
-    cursor: pointer;
-    
+    cursor: pointer; */
 }
 .info{
-    text-align: center;
-    margin-bottom: 100px;
+    /* text-align: center;
+    margin-bottom: 100px; */
 }
 .phone,
 .photoBook{
-    text-align: center;
+    /* text-align: center;
     display: inline-block;
-    line-height: 42px;
+    line-height: 42px; */
 }
 .phone a,
 .photoBook a{
-    color: #000;
-    cursor: pointer;
+    /* color: #000;
+    cursor: pointer; */
 }
 .phone{
-    font-family: 'Cabin', sans-serif;
+    /* font-family: 'Cabin', sans-serif; */
+    /* letter-spacing: 0.08em; */
+    font-size: 2.2rem;
+    line-height: 1.8;
     letter-spacing: 0.08em;
-    font-size: 2.4rem;
-    line-height: 1.9;
-    letter-spacing: 0.09em;
-    padding: 0 30px;
-    
+    padding: 0 30px;   
 }
 .photoBook{
-    padding: 10px 30px 6px;
-    border: 1px solid transparent; 
-    border-radius: 24px; 
-    transition: 0.3s;
+    /* padding: 10px 30px 6px; */
+    /* border: 1px solid transparent;  */
+    /* border-radius: 24px;  */
+    /* transition: 0.3s; */
     
-    font-weight: 500;
-    font-size: 1.7rem;
-    line-height: 2;
-    letter-spacing: 0.2em;
-    font-family: 'Noto Sans JP', sans-serif;
+    /* font-weight: 500; */
+    font-size: 1.6rem;
+    /* line-height: 2; */
+    letter-spacing: 0.1em;
+    /* font-family: 'Noto Sans JP', sans-serif; */
 }
 .photoBook:hover{
-    transition: 0.3s;
+    /* transition: 0.3s;
     background-color: #ff6;
-    border: 1px solid #000;
+    border: 1px solid #000; */
     
 }
 .phone span svg,
 .photoBook span svg{
-    width: 24px;
+    /* width: 24px;
     height: 24px;
-    margin-right: 10px;
-    vertical-align: text-bottom;
+    margin-right: 10px; */
+    /* vertical-align: text-bottom; */
+}
+.photoBook span svg{
+    margin-right: 20px;
 }
 footer nav{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    max-width: 878px;
-    padding: 0 40px;
-    margin: 0 auto;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* text-align: center; */
+    max-width: 580px;
+    /* padding: 0 40px; */
+    /* margin: 0 auto; */
 
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 .nav_menu{
-    width: 50%;
-    display: flex;
-    text-align: left;
+    width: calc((100% / 2) - 15px);
+    /* display: flex; */
+    /* text-align: left; */
 }
 .nav_menu ul:first-child{
     margin: 0 20px 4px 0;
@@ -2936,13 +2968,13 @@ footer nav{
     font-weight: normal;
 }
 .footer_icon{
-    width: 50%;
+    width: calc((100% / 2) - 15px);
 }
 .footer_icon p a{
     border: 1px solid #000;
     transition: all 0.3s;
     
-    width: 400px;
+    width: 100%;
     height: 88px;
     padding: 20px;
     display: block;
@@ -3055,6 +3087,11 @@ footer nav{
     
 }
 
+/* ************************************************************************************** */
+/* レスポンシブ（タブレット）**************************************************************** */
+@media screen and (max-width: 800px) {
+    
+}
 /* ************************************************************************************** */
 /* レスポンシブ（タブレット）**************************************************************** */
 @media screen and (max-width: 640px) {
