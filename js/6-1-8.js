@@ -1,6 +1,45 @@
+// what'sりの部屋のスライド(inner_wrap2)
+$('.whatsRinobeya_slider').slick({
+	fade:true,//切り替えをフェードで行う。初期値はfalse。
+		autoplay: true,//自動的に動き出すか。初期値はfalse。
+		autoplaySpeed: 3000,//次のスライドに切り替わる待ち時間
+		speed:1000,//スライドの動きのスピード。初期値は300。
+		infinite: true,//スライドをループさせるかどうか。初期値はtrue。
+		slidesToShow: 1,
+		slidesToScroll: 1,//1回のスクロールで3枚の写真を移動して見せる
+		arrows: false,//左右の矢印あり
+		dots: false,//下部ドットナビゲーションの表示
+        pauseOnFocus: false,//フォーカスで一時停止を無効
+        pauseOnHover: false,//マウスホバーで一時停止を無効
+        pauseOnDotsHover: false,//ドットナビゲーションをマウスホバーで一時停止を無効
+    });
+	//スマホ用：スライダーをタッチしても止めずにスライドをさせたい場合
+	// $('.slider').on('touchmove', function(event, slick, currentSlide, nextSlide){
+	// 	$('.slider').slick('slickPlay');
+	// });
+
+
+	// りの部屋でできる3つのこと のスライド実装(inner_wrap3)
+	$(function () {
+		$(".inner_wrap3_slider").slick({
+			speed: 1200,//スライドのスピード。初期値は300。
+			cssEase: 'ease',//動き方。初期値はeaseですが、スムースな動きで見せたいのでlinear
+			arrows: true,
+			nextArrow: '<div class="slick-next"><img src="../img/slider-arrow.png" alt="next"></div>',
+			dots: true,
+			dotsClass: "inner_wrap3_dots", //ここでclass名を変更する（デフォルトはslick-dots）
+			responsive: [{
+				breakpoint: 800,//切り替えたいデバイス幅を入れる
+				settings: {
+					arrows: false,
+				}
+			  }],
+		});
+	});
+
 
 	// 施工事例のスライド実装(inner_wrap4)
-	$('.slider').slick({
+	$('.works_slider_inner').slick({
 		arrows: false,//左右の矢印はなし
 		autoplay: true,//自動的に動き出すか。初期値はfalse。
 		autoplaySpeed: 3000,//自動的に動き出す待ち時間。初期値は3000ですが今回の見せ方では0
@@ -12,17 +51,22 @@
 		slidesToShow: 3,//スライドを画面に3枚見せる
 		slidesToScroll: 1,//1回のスライドで動かす要素数
 		centerMode: true,/* 前後のスライドを部分的に表示 */
-		// centerPadding: "162px",
-		centerPadding: "288px",
+		centerPadding: "290px",
+		variableWidth: true,
+		// centerPadding: "327px",
 		responsive: [{
 			breakpoint: 1025,//切り替えたいデバイス幅を入れる
 			settings: {
-			  slidesToShow: 1,
+				slidesToShow: 1,
+			}
+		  },{
+			breakpoint: 1025,//切り替えたいデバイス幅を入れる
+			settings: {
 			}
 		  }],
 	});
 
-	// lifestyle部分のスライダー
+	// lifestyle部分のスライダー(inner_wrap5)
 	$('.lifeStyle_contents_right_inner').slick({
 		arrows: false,//左右の矢印はなし
 		autoplay: true,//自動的に動き出すか。初期値はfalse。
@@ -35,21 +79,16 @@
 		slidesToShow: 1,//スライドを画面に4枚見せる
 		slidesToScroll: 1,//1回のスライドで動かす要素数
 		centerMode: true,/* 前後のスライドを部分的に表示 */
-		// centerPadding: "100px"
-		// 	responsive: [
-			// 		{
-				// 		breakpoint: 769,//モニターの横幅が769px以下の見せ方
-				// 		settings: {
-					// 			slidesToShow: 2,//スライドを画面に2枚見せる
-					// 		}
-					// 	},
-	// 	{
-		// 		breakpoint: 426,//モニターの横幅が426px以下の見せ方
-		// 		settings: {
-			// 			slidesToShow: 1.5,//スライドを画面に1.5枚見せる
-			// 		}
-			// 	}
-			// ]
+		responsive:[
+			{
+				breakpoint: 1025,//モニターの横幅が769px以下の見せ方
+				settings: {
+					centerPadding: "0",
+					centerMode: false,/* 前後のスライドを部分的に表示 */
+						}
+					},
+
+					]
 		});
 
 
@@ -65,7 +104,7 @@
 		
 		
 		// FAQのアコーディオン実装
-		$("#js-menu").on("click", function () {
+		$("#js-menu,#js-menu2,#js-menu3,#js-menu4,#js-menu5,#js-menu6,#js-menu7,#js-menu8").on("click", function () {
 			$(this).next().slideToggle();
 			$(this).toggleClass('menu-border');			
 		});
@@ -127,8 +166,8 @@
 			$('.second_cat').css('transition', '0.5s')
 			
 			// 猫が左に移動
-		// 動きのきっかけとなるアニメーションの名前を定義
-		function fadeAnime(){
+			// 動きのきっかけとなるアニメーションの名前を定義
+			function fadeAnime(){
 			
 			// ふわっ
 			$('.fadeInTrigger1').each(function(){ //fadeUpTriggerというクラス名が
@@ -157,15 +196,4 @@
 		};
 		
 		
-		// りの部屋でできる3つのこと のスライド実装
-		$(function () {
-			$(".inner_wrap3_slider").slick({
-				speed: 1200,//スライドのスピード。初期値は300。
-				cssEase: 'ease',//動き方。初期値はeaseですが、スムースな動きで見せたいのでlinear
-				arrows: true,
-				nextArrow: '<div class="slick-next"><img src="../img/slider-arrow.png" alt="next"></div>',
-				dots: true,
-				dotsClass: "inner_wrap3_dots" //ここでclass名を変更する（デフォルトはslick-dots）
-			});
-		});
 		  
