@@ -465,6 +465,9 @@ html, body{
     line-height: 2.2em;
     letter-spacing: 0.15em;   
 }
+.planet_illust_wrap{
+    display: none;
+}
 .window_wrapper2{
     display: none;
 }
@@ -1929,7 +1932,8 @@ html, body{
     /* line-height: 2.2em; */
     /* letter-spacing: 0.15em; */
 }
-.plant_illust_wrap{
+.planet_illust_wrap{
+    display: block;
 }
 .plant_illust{
     position: relative;
