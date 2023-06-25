@@ -1124,10 +1124,9 @@ html, body{
     padding-top: 20px;
     width: 70%;
 }
-.check_list ul{
+.check_list ul .check_list_wrap{
     display: flex;
     justify-content: space-between;
-    /* width: 560px; */
 }
 .check_list ul label{
     height: 54px;
@@ -1861,26 +1860,25 @@ html, body{
 }
 .contents_top h1{
     /* font-family: 'Noto Serif JP', serif; */
-    font-size: 5.9em;
     /* font-weight: 200; */
     /* letter-spacing: 0.16em; */
+    /* position: relative; */
+    
     
     line-height: 67px;
-    /* display: block; */
-    
-    /* position: relative; */
+    font-size: 5.9em;
     top: 175px;
-    left: 50%;
-    transform:translate(50%,0);
-
+    /* left: 50%; */
     line-height: 77px;
     display: block;
-    
     position: relative;
-    left: 31%;
+    /* left: 31%; */
     top: 18%;
     transform:translateX(0);
     transform:translateY(0);
+    left: 0;
+    left: 50%;
+    transform:translate(-50%,0);
 }
 
 /* スクロールアイコン部分 */
@@ -1981,8 +1979,10 @@ html, body{
 }
 .contents_story2 .inner_contents_story2{
     position: relative;
-    left: 29%;
-    top: 96%;
+    left: 0;
+    transform: translate(-50%,0);
+    left: 50%;
+    top: 80%;
     height: 259px;
 }
 .window_wrapper3{
@@ -2584,7 +2584,6 @@ html, body{
 .inner_wrap9{
     padding-top: 150px;  /* OK */
     font-size: 6.25px;
-    /* background-color: #fff; */
     position: relative;
 }
 .inner_wrap6 h2,
@@ -2665,7 +2664,7 @@ html, body{
     background:linear-gradient(135deg,transparent 0%,transparent 50%,#ff6 50%,#ff6 100%);   /* 右下の3角形 */
 }
 .faq_inner p{
-    width: 484.5px;
+    width: 100%;
     padding: 20px;
     font-size: 1.4rem;
     line-height: 2;
@@ -2684,10 +2683,6 @@ html, body{
 /* チェックリスト部分------------------------------------------ */
 .check_list{
     padding-top: 20px;
-}
-.check_list ul{
-    display: flex;
-    justify-content: space-between;
 }
 .check_list ul label{
     height: 54px;
@@ -3409,22 +3404,23 @@ html, body{
 /* contents_top部分 */
 .contents_top{
     /* height: 610px; */
-    height: auto;
-    position: absolute;
+    /* height: auto; */
 }
 .contents_top h1{
     /* font-family: 'Noto Serif JP', serif; */
-    font-size: 6em;
     /* font-weight: 200; */
     /* letter-spacing: 0.16em; */
-    
-    line-height: 67px;
     /* display: block; */
-    
     /* position: relative; */
+    
+    font-size: 6em;
+    line-height: 67px;
     top: 175px;
-    left: 36%;
-    transform:translate(0,0);
+    /* left: 36%; */
+    left: 0;
+    left: 50%;
+    /* transform:translate(-50%,0); */
+
 }
 
 /* スクロールアイコン部分 */
@@ -3518,7 +3514,7 @@ html, body{
 }
 .contents_story2 .inner_contents_story2 {
     position: relative;
-    left: 20%;
+    /* left: 20%; */
     top: 103%;
     height: 259px;
 }
@@ -4232,15 +4228,11 @@ html, body{
 .check_list{
     padding-top: 20px;
 }
-.check_list ul{
-    display: flex;
-    justify-content: space-between;
-}
 .check_list ul label{
     height: 54px;
     padding-left: 20px;
     letter-spacing: 0.08em;
-    font-size: 1.7rem;
+    font-size: 15px;
     line-height: 2;
     letter-spacing: 0.2em;
 }
@@ -4958,7 +4950,6 @@ html, body{
 .contents_top{
     /* height: 610px; */
     height: auto;
-    position: absolute;
 }
 .contents_top h1{
     /* font-family: 'Noto Serif JP', serif; */
@@ -4967,12 +4958,7 @@ html, body{
     /* letter-spacing: 0.16em; */
     
     line-height: 67px;
-    /* display: block; */
-    
-    /* position: relative; */
     top: 120px;
-    left: 0;
-    transform:translate(33%,0);
 }
 
 /* スクロールアイコン部分 */
@@ -5779,8 +5765,15 @@ html, body{
     padding-top: 20px;
 }
 .check_list ul{
-    display: flex;
-    justify-content: left;
+    /* display: flex;
+    justify-content: left; */
+    width: 100%;
+    flex-wrap: wrap;
+}
+.check_list_wrap{
+}
+.check_list_wrap li{
+    
 }
 .check_list ul label{
     height: 54px;
